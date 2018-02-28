@@ -1,0 +1,10 @@
+.home-container {
+  width: 100%;
+  height: 50em;
+  background-image: url("../../assets/korea.jpg");
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  opacity: .4; }
+
+/*# sourceMappingURL=Home.css.map */

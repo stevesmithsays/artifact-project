@@ -1,0 +1,38 @@
+.header-container {
+  height: 15vh;
+  width: 100%;
+  padding: 2em;
+  background-color: #203145;
+  color: #EEFEDC;
+  letter-spacing: 1.5px; }
+
+.logo-container {
+  display: inline-flex; }
+
+.logo {
+  font-family: "Vollkorn", serif;
+  font-size: 2em;
+  cursor: pointer; }
+
+.nav-container {
+  display: inline-flex;
+  float: right; }
+
+.nav-element {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5em;
+  margin: 0 2rem; }
+
+.nav-element:hover {
+  color: #FECB88;
+  cursor: pointer; }
+
+a {
+  text-decoration: none;
+  color: #EEFEDC; }
+
+a:hover {
+  text-decoration: none;
+  color: #FECB88; }
+
+/*# sourceMappingURL=Header.css.map */
