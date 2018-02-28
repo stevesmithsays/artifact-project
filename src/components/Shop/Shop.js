@@ -1,7 +1,10 @@
+//Foreign Imports
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import axios from 'axios';
+
+//Local Imports
+import ProductCard from '../ProductCard/ProductCard';
 
 class Shop extends Component {
 
@@ -20,6 +23,7 @@ let cardDisplay; //map over the product cards and display them.
 
         return(<div className = 'shop-container'>
         <h1>THIS WILL DISPLAY THE PRODUCTS WHEN I'M DONE</h1>
+        <ProductCard />
         </div>
         )
     }

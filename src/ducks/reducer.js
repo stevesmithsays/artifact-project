@@ -47,6 +47,16 @@ export default function reducer(state = initialState, action) {
         case `${SAVE_USER}_REJECTED`:
         
         return Object.assign( {}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+//SAVE_PRODUCTS REDUCERS
+        case `${SAVE_PRODUCTS}_PENDING`:
+        return Object.assign( {}, state, {isLoading: true});
+
+        case `${SAVE_PRODUCTS}_FULFILLED`:
+        return Object.assign( {}, state, {isLoading: false, products: action.payload});
+
+        case `${SAVE_PRODUCTS}_REJECTED`:
+        return Object.assign( {}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+        
         default: 
         
         return state;

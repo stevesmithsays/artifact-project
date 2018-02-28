@@ -12,7 +12,8 @@
 .logo {
   font-family: "Vollkorn", serif;
   font-size: 2em;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 1.5em; }
 
 .nav-container {
   display: inline-flex;
