@@ -188,15 +188,21 @@ h3 {
   margin-bottom: 1em; }
 
 .shop-container {
+  height: auto;
+  width: inherit;
   line-height: 30px;
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3em; }
 
 .product-container {
   height: 350px;
   width: 250px;
-  margin: 2em;
+  margin: 1em;
   background-color: #CFD2D7;
-  text-align: center; }
+  text-align: center;
+  border-radius: 2%; }
 
 .text-container {
   margin: 15px;
@@ -208,8 +214,13 @@ p {
   text-align: justify; }
 
 .card-pic {
-  height: 350px;
-  width: 250px; }
+  margin-top: .5em;
+  position: relative;
+  height: 200px;
+  width: 200px; }
+
+h2 {
+  margin-top: 1.8em; }
 
 .home-container {
   width: 100%;

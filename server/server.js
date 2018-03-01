@@ -86,11 +86,11 @@ app.get('/api/currentuser', (req, res) => {
 })
 
 //products endpoint from shop.js
-app.get('/api/getProducts', (req, res) => {
+app.get('/api/products', (req, res) => {
     req.app
       .get("db")
       .selectAllProducts()
-      .then((response) => {
+      .then((response) => {         
         res.json(response);
       })
       .catch(err => {

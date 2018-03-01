@@ -5,7 +5,7 @@ const SAVE_USER = "SAVE_USER";
 const SAVE_PRODUCTS = "SAVE_PRODUCTS";
 
 //ACTION CREATORS
-//action.payload
+//becomes the action.payload in the reducer
 export function saveUser(){
     //whatever is posted can be accessed on the backend through req.body via body parser
     return {
@@ -16,12 +16,14 @@ export function saveUser(){
     }
 }
 
-// export function saveProducts(){
-//     return {
-//         type: SAVE_PRODUCTS,
-//         payload: 
-//     }
-// }
+export function saveProducts(){
+    return {
+        type: SAVE_PRODUCTS,
+        payload: axios.get('/api/products').then( (res) => {
+            return res.data;
+        }).catch( (err) => {return err.message})
+    }
+}
 
 //INITIAL STATE
 const initialState = {

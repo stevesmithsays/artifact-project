@@ -7,7 +7,7 @@ import {withRouter} from 'react-router-dom';
 
 //Foreign Imports
 import routes from './routes';
-import axios from 'axios';
+
 
 class App extends Component {
 

@@ -1,29 +1,39 @@
 //Foreign Imports
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
+
+
 
 //Local Imports
-import ProductCard from '../ProductCard/ProductCard';
+import { saveProducts } from '../../ducks/reducer';
 
 class Shop extends Component {
+    constructor(){
+        super();
+    }
 
 //on page load, pull all of the available products from the database
 componentDidMount(){
-    axios.get('http://localhost:3002/api/getProducts').then( (res) => {
-        console.log(res.data);
-
-    })
-
-
+    this.props.saveProducts();
 }
 
-    render(){
-let cardDisplay; //map over the product cards and display them.
+    render(){ 
+        //displays and renders product cards if there are product cards to render
+        let cardDisplay;                
+        if(this.props.products.length !== 0){            
+            cardDisplay = this.props.products.map( (curr, index) => {              
+                            
+                return(<div className = 'product-container' key = {index}>
+                <div className = 'text-container'>                
+                <img src={require(`../../assets/products/${curr.image}`)} className = 'card-pic' alt = 'product picture'/>
+                <h2>{curr.name}</h2>
+                </div>
+                </div>);               
+                })      
+            }  
 
-        return(<div className = 'shop-container'>
-        <h1>THIS WILL DISPLAY THE PRODUCTS WHEN I'M DONE</h1>
-        <ProductCard />
+        return(<div className = 'shop-container'>        
+        {cardDisplay}
         </div>
         )
     }
@@ -31,4 +41,4 @@ let cardDisplay; //map over the product cards and display them.
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps)(Shop);
+export default connect(mapStateToProps, {saveProducts})(Shop);
