@@ -246,12 +246,15 @@ h2 {
   line-height: 30px;
   font-size: 1.5em; }
 
-.detail-container {
-  background-color: orangered; }
+.detailed-container {
+  text-align: center; }
 
 .detailed-picture {
-  height: 500px;
-  width: 500px; }
+  height: 31.25em;
+  width: 31.25em; }
+
+h1 {
+  font-size: 2em; }
 
 body {
   margin: 0;

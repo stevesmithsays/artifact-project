@@ -19,9 +19,9 @@ class Product extends Component {
         }              
     }               
               return(detailedProductView());
-            }               
+            } //end of render method              
     
-    }
+    }//end of component
 
 
 const mapStateToProps = state => state;
