@@ -18,8 +18,7 @@ class App extends Component {
   }
 
   render() {     
-    //consolelogging state as this.props
-    // console.log(this.props);   
+      
     return (
       <div className="app">
         <Header />

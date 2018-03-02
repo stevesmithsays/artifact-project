@@ -10,8 +10,9 @@ class Header extends Component {
             <ul className = 'nav-container'>
              <Link to = '/shop'><li className="nav-element">Shop</li></Link>
               <Link to = '/story'><li className="nav-element">Story</li></Link>
-              <Link to = 'contact'><li className="nav-element">Contact</li></Link>
+              <Link to = '/contact'><li className="nav-element">Contact</li></Link>
               <a href = 'http://localhost:3002/auth' ><li className = 'nav-element' id = 'login'>Login</li></a>
+              <Link to = '/cart'><li className = 'nav-element'>Cart</li></Link>
               </ul>
           </header>);
     }

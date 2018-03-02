@@ -1,7 +1,7 @@
 //Foreign Imports
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 
 
 //Local Imports
@@ -19,16 +19,16 @@ componentDidMount(){
 
     render(){ 
         //displays and renders product cards if there are product cards to render
-        let cardDisplay;                
+        let cardDisplay;          
+           
         if(this.props.products.length !== 0){            
-            cardDisplay = this.props.products.map( (curr, index) => {              
-                            
-                return(<div className = 'product-container' key = {index}>
+            cardDisplay = this.props.products.map( (curr, index) => {                       
+                return(<Link to = {`/product/${index}`} key = {index}><div className = 'card-container' key = {index} >
                 <div className = 'text-container'>                
-                <img src={require(`../../assets/products/${curr.image}`)} className = 'card-pic' alt = 'product picture'/>
+                <img src={require(`../../assets/products/${curr.image}`)} className = 'card-pic' alt = 'product' key = {index}/>
                 <h2>{curr.name}</h2>
                 </div>
-                </div>);               
+                </div></Link>);               
                 })      
             }  
 
