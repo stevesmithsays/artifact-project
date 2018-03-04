@@ -175,7 +175,6 @@ a:hover {
 .footer-container {
   position: absolute;
   bottom: 0;
-  background-color: #203145;
   height: 15vh;
   width: 100%;
   padding: 2em;
@@ -247,14 +246,46 @@ h2 {
   font-size: 1.5em; }
 
 .detailed-container {
-  text-align: center; }
+  text-align: center;
+  margin: 2em;
+  color: #203145; }
 
 .detailed-picture {
   height: 31.25em;
-  width: 31.25em; }
+  width: 31.25em;
+  float: left;
+  margin-right: 1em; }
 
-h1 {
+.product-info {
+  letter-spacing: 3px;
+  line-height: 1.5em; }
+
+.product-info > h1 {
+  font-size: 3em; }
+
+.product-info > h3 {
   font-size: 2em; }
+
+.product-desc {
+  margin: 2em 2em; }
+
+#add-btn {
+  background-color: white;
+  cursor: pointer;
+  padding: 15px;
+  border: 3px solid #203145;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-family: "Oswald", sans-serif;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out; }
+
+#add-btn:hover {
+  background-color: #203145;
+  color: #D99F5B;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in; }
+
+#add-btn:focus {
+  outline: 0; }
 
 body {
   margin: 0;

@@ -3,6 +3,7 @@ import axios from 'axios';
 //CONSTANTS
 const SAVE_USER = "SAVE_USER";
 const SAVE_PRODUCTS = "SAVE_PRODUCTS";
+const ADD_TO_CART = "ADD_TO_CART";
 
 //ACTION CREATORS
 //becomes the action.payload in the reducer
@@ -24,6 +25,13 @@ export function saveProducts(){
         }).catch( (err) => {return err.message})
     }
 }
+
+// export function addToCart(){
+//     return {
+//         type: ADD_TO_CART,
+//         payload: 
+//     }
+// }
 
 //INITIAL STATE
 const initialState = {

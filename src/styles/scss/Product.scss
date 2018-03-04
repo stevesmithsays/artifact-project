@@ -1,14 +1,60 @@
 .detailed-container {   
     text-align: center;
+    margin: 2em;   
+    color: $main-color;
 }
 
 .detailed-picture {
     height: 31.25em;
     width: 31.25em;
+    float: left;
+    margin-right: 1em;
 }
 
-h1 {
-    font-size: 2em;
+.product-info {
+    letter-spacing: 3px;
+    line-height: 1.5em; 
+
 }
+
+
+.product-info > h1 {
+    font-size: 3em;
+   
+}
+
+
+.product-info > h3 {
+    font-size: 2em;
+
+}
+
+.product-desc {
+    margin: 2em 2em;
+
+}
+
+#add-btn {
+    background-color: white;  
+    cursor: pointer;
+    padding: 15px;
+    border: 3px solid $main-color;    
+    border-radius: 5px;
+    font-size: 1.2em;    
+    font-family: $body-font;     
+    transition: background-color 0.2s ease-out, color 0.2s ease-out; 
+
+}
+
+#add-btn:hover {
+    background-color: $main-color;
+    color: $secondary-dark;
+    transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+
+#add-btn:focus {
+    outline: 0;
+}
+
 
 

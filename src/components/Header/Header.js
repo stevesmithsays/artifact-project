@@ -13,8 +13,7 @@ class Header extends Component {
               <Link to = '/contact'><li className="nav-element">Contact</li></Link>
               <a href = 'http://localhost:3002/auth' ><li className = 'nav-element' id = 'login'>Login</li></a>
               <Link to = '/cart'><li className = 'nav-element'>Cart</li></Link>
-              </ul>
-          </header>);
+              </ul></header>);
     }
 }
 

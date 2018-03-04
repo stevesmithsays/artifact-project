@@ -1,12 +1,12 @@
-$footer-background: #203145;
+
 .footer-container {
     position: absolute;
-        bottom: 0;            
-    background-color: $footer-background; 
+        bottom: 0;         
+   
      height: 15vh;
     width: 100%;
     padding: 2em;    
-    background-color: $header-background;
+    background-color: $main-color;
     color: $header-text;
     letter-spacing: 1.5px; 
     text-align: center;     
