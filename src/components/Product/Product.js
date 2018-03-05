@@ -1,5 +1,9 @@
+//Foreign Imports
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+//Local Imports
+import {addToCart} from '../../ducks/reducer';
 
 class Product extends Component {
     constructor(){
@@ -8,9 +12,7 @@ class Product extends Component {
 
 
     render(){           
-        let id = this.props.match.params.id;
-         console.log(this.props.match.params.id);      
-         console.log(this.props.products);
+        let id = this.props.match.params.id;      
 
          let detailedProductView = () =>{
              if(this.props.products.length !== 0){                
@@ -40,10 +42,10 @@ class Product extends Component {
                     warp piracy Brethren of the Coast. 
                   </p>
                   <h3>{`Price: $${this.props.products[`${id}`].price}`}</h3>
-                  <button id = 'add-btn'>Add to Cart</button>
+                  <button id = 'add-btn' onClick = {this.props.addToCart()}>Add to Cart</button>
                 </div>
-              </div>;           
-             
+              </div>;
+                     
         }              
     }               
               return(detailedProductView());
@@ -54,4 +56,4 @@ class Product extends Component {
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps)(Product);
+export default connect(mapStateToProps, {addToCart})(Product);

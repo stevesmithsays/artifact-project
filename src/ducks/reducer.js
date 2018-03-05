@@ -5,6 +5,8 @@ const SAVE_USER = "SAVE_USER";
 const SAVE_PRODUCTS = "SAVE_PRODUCTS";
 const ADD_TO_CART = "ADD_TO_CART";
 
+
+
 //ACTION CREATORS
 //becomes the action.payload in the reducer
 export function saveUser(){
@@ -26,10 +28,11 @@ export function saveProducts(){
     }
 }
 
-export function addToCart(){
+//needs to be finished as of Monday 3/5/2018
+export function addToCart(product, quantity, price){
     return {
         type: ADD_TO_CART,
-        payload: axios.post('/api/addtocart', {cart: this.props.products.id}).then( (res) => {
+        payload: axios.post('/api/addtocart', {product_id: product, quantity: quantity, price: price}).then( (res) => {
             return res.data;
         }).catch( (err) => {return err.message})
     }
@@ -79,7 +82,7 @@ export default function reducer(state = initialState, action) {
 
         case `${ADD_TO_CART}_REJECTED`:
         return Object.assign( {}, state, {isLoading: false, didErr: true, errMessage: action.payload});
-        
+
         
         default: 
         
