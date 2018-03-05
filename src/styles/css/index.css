@@ -287,6 +287,9 @@ h2 {
 #add-btn:focus {
   outline: 0; }
 
+#add-btn:active {
+  transform: translate(1.5px, 1.5px); }
+
 body {
   margin: 0;
   padding: 0;

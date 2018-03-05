@@ -53,8 +53,16 @@
 }
 
 #add-btn:focus {
-    outline: 0;
+    outline: 0;    
 }
+
+#add-btn:active {    
+    transform: translate(1.5px, 1.5px);
+}
+
+
+
+
 
 
 

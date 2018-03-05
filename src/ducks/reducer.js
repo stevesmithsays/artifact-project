@@ -26,16 +26,19 @@ export function saveProducts(){
     }
 }
 
-// export function addToCart(){
-//     return {
-//         type: ADD_TO_CART,
-//         payload: 
-//     }
-// }
+export function addToCart(){
+    return {
+        type: ADD_TO_CART,
+        payload: axios.post('/api/addtocart', {cart: this.props.products.id}).then( (res) => {
+            return res.data;
+        }).catch( (err) => {return err.message})
+    }
+}
 
 //INITIAL STATE
 const initialState = {
     user: [],
+    cart: [],
     isLoading: false,
     didErr: false,
     errMessage: null,
@@ -46,6 +49,7 @@ const initialState = {
 export default function reducer(state = initialState, action) {    
     switch(action.type) {
         //cases go here
+//SAVE_USER 
         case `${SAVE_USER}_PENDING`:
        
         return Object.assign( {}, state, {isLoading: true});
@@ -57,7 +61,7 @@ export default function reducer(state = initialState, action) {
         case `${SAVE_USER}_REJECTED`:
         
         return Object.assign( {}, state, {isLoading: false, didErr: true, errMessage: action.payload});
-//SAVE_PRODUCTS REDUCERS
+//SAVE_PRODUCTS 
         case `${SAVE_PRODUCTS}_PENDING`:
         return Object.assign( {}, state, {isLoading: true});
 
@@ -66,6 +70,16 @@ export default function reducer(state = initialState, action) {
 
         case `${SAVE_PRODUCTS}_REJECTED`:
         return Object.assign( {}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+//ADD_TO_CART
+        case `${ADD_TO_CART}_PENDING`:
+        return Object.assign({}, state, {isLoading: true});
+
+        case `${ADD_TO_CART}_FULFILLED`:
+        return Object.assign( {}, state, {isLoading: false, cart: action.payload});
+
+        case `${ADD_TO_CART}_REJECTED`:
+        return Object.assign( {}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+        
         
         default: 
         
