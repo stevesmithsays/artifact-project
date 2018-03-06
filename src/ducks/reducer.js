@@ -13,7 +13,7 @@ export function saveUser(){
     //whatever is posted can be accessed on the backend through req.body via body parser
     return {
         type: SAVE_USER,
-        payload: axios.get('/api/currentuser').then( (res) =>{                         
+        payload: axios.get('/api/currentuser').then( (res) =>{                       
             return res.data;
         }).catch( (err) => {return err.message})
     }
@@ -29,10 +29,11 @@ export function saveProducts(){
 }
 
 //needs to be finished as of Monday 3/5/2018
-export function addToCart(product, quantity, price){
+export function addToCart(userId, productId, price){
     return {
         type: ADD_TO_CART,
-        payload: axios.post('/api/addtocart', {product_id: product, quantity: quantity, price: price}).then( (res) => {
+        payload: axios.post('/api/addtocart', {user_id: userId,product_id: productId, unit_price: price}).then( (res) => {
+            console.log('res from addToCart ',res);
             return res.data;
         }).catch( (err) => {return err.message})
     }

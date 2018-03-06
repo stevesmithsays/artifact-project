@@ -5,22 +5,33 @@ import { connect } from 'react-redux';
 //Local Imports
 import {addToCart} from '../../ducks/reducer';
 
+
+
 class Product extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
+
+        
     }
 
 
     render(){           
-        let id = this.props.match.params.id;      
+        let productId = this.props.match.params.id;
+        let currProduct = this.props.products[`${productId}`];
+        let price = this.props.products[`${productId}`].price;
+        let name = currProduct.name;
+        let image = currProduct.image;
+        let userId = this.props.user.id;        
+        console.log(this.props.addToCart);
+             
 
          let detailedProductView = () =>{
              if(this.props.products.length !== 0){                
             return <div className="detailed-container">
-                <img src={require(`../../assets/products/${this.props.products[`${id}`].image}`)} className="detailed-picture" />
+                <img src={require(`../../assets/products/${image}`)} className="detailed-picture" alt = 'detailed view' />
 
                 <div className="product-info">
-                  <h1>{`${this.props.products[`${id}`].name}`}</h1>
+                  <h1>{`${name}`}</h1>
                   <p className="product-desc">
                         Gally smartly Shiver me timbers no prey no pay
                     scurvy hands barkadeer bounty wherry jolly boat.
@@ -41,8 +52,8 @@ class Product extends Component {
                     Arr loot holystone Shiver me timbers yardarm
                     warp piracy Brethren of the Coast. 
                   </p>
-                  <h3>{`Price: $${this.props.products[`${id}`].price}`}</h3>
-                  <button id = 'add-btn' onClick = {this.props.addToCart()}>Add to Cart</button>
+                  <h3>{`Price: $${price}`}</h3>
+                  <button id = 'add-btn' onClick = {addToCart(userId, productId, price)}>Add to Cart</button>
                 </div>
               </div>;
                      

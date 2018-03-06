@@ -78,7 +78,7 @@ app.get(
 //endpoint for current user's data to be stored in the redux store
 app.get('/api/currentuser', (req, res) => {  
     //pulls req.user from the current user after logging in.    
-    if( req.user) res.status(200).json(req.user);
+    if(req.user) res.status(200).json(req.user);
     else res.status(400).json({message: "User Not Logged In."})
       .catch(console.log())      
    
@@ -98,8 +98,9 @@ app.get('/api/products', (req, res) => {
 })
 
 //cart endpoint from product.js
-app.post('/api/addtocart', (req,res) => {
+app.post('/api/addtocart', (req,res) => {    
 req.app.get('db').addItemToCart().then( (response) => {
+    console.log(response);
     res.json(response);
 }).catch( (err) => {
     res.status(500).json(err);

@@ -5,21 +5,21 @@ CREATE TABLE users (
 ),
 
 CREATE TABLE products (
-    id SERIAL PRIMARY KEY,
-    upc INT,
+    id SERIAL PRIMARY KEY, 
     name VARCHAR(40),
     country VARCHAR(40),
-    price DECIMAL(10,5)
+    price FLOAT,
+    image VARCHAR(200),
+    productinfo VARCHAR(500)
+
     
 )
 
 CREATE TABLE carts (
     user_id SERIAL PRIMARY KEY,
     product_id INT,
-    quantity INT,
     unit_price FLOAT,
-    total_price FLOAT
-    
+    total_price FLOAT    
 )
 
 
