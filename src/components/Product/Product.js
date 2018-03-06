@@ -11,53 +11,57 @@ class Product extends Component {
     constructor(props){
         super(props);
 
+
+
         
     }
 
 
-    render(){           
-        let productId = this.props.match.params.id;
-        let currProduct = this.props.products[`${productId}`];
-        let price = this.props.products[`${productId}`].price;
-        let name = currProduct.name;
-        let image = currProduct.image;
-        let userId = this.props.user.id;        
-        console.log(this.props.addToCart);
+    render(){ 
+      
              
 
          let detailedProductView = () =>{
-             if(this.props.products.length !== 0){                
-            return <div className="detailed-container">
-                <img src={require(`../../assets/products/${image}`)} className="detailed-picture" alt = 'detailed view' />
+             if(this.props.products.length !== 0){
+//variables for dynamically rendered detailed product component
+let productId = this.props.match.params.id;
+let currProduct = this.props.products[`${productId}`];
+let price = this.props.products[`${productId}`].price;
+let name = currProduct.name;
+let image = currProduct.image;
+let userId = this.props.user.id;
+console.log("userId :", userId, "productId :", productId, "price: ", price);
 
-                <div className="product-info">
-                  <h1>{`${name}`}</h1>
-                  <p className="product-desc">
-                        Gally smartly Shiver me timbers no prey no pay
-                    scurvy hands barkadeer bounty wherry jolly boat.
-                    Chantey dance the hempen jig port hang the jib
-                    grog take a caulk Blimey bilged on her anchor
-                    Nelsons folly blow the man down. Hogshead
-                    spyglass Yellow Jack topgallant list lad
-                    square-rigged snow barque Jolly Roger. Piracy lanyard prow
-                    Shiver me timbers gaff starboard nipperkin
-                    skysail Davy Jones' Locker dead men tell no
-                    tales. Jury mast hardtack belay snow topsail
-                    heave down code of conduct list cutlass
-                    man-of-war. Salmagundi belay bilged on her
-                    anchor quarter yardarm furl scuppers Barbary
-                    Coast lugsail gangplank. Bilge rat walk the
-                    plank ye jury mast hardtack yardarm Nelsons
-                    folly plunder wherry mizzen. League Gold Road
-                    Arr loot holystone Shiver me timbers yardarm
-                    warp piracy Brethren of the Coast. 
-                  </p>
-                  <h3>{`Price: $${price}`}</h3>
-                  <button id = 'add-btn' onClick = {addToCart(userId, productId, price)}>Add to Cart</button>
-                </div>
-              </div>;
-                     
-        }              
+if(this.props.cart.length !== 0){
+console.log(this.props.cart);
+}
+
+return (
+  <div className="detailed-container">
+    <img
+      src={require(`../../assets/products/${image}`)}
+      className="detailed-picture"
+      alt="detailed view"/>
+
+    <div className="product-info">
+      <h1>{`${name}`}</h1>
+      <p className="product-desc">
+        Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora
+        quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead
+        dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus
+        vultus comedat cerebella viventium. Qui offenderit rapto, terribilem
+        incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search
+        for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut
+        malus movie horror.
+      </p>
+      <h3>{`Price: $${price}`}</h3>
+      <button id="add-btn" onClick= {() => addToCart(userId, productId, price)}>
+        Add to Cart
+      </button>
+    </div>
+  </div>
+        );
+      }              
     }               
               return(detailedProductView());
             } //end of render method              
