@@ -24,18 +24,19 @@ export function saveProducts(){
         type: SAVE_PRODUCTS,
         payload: axios.get('/api/products').then( (res) => {
             return res.data;
-        }).catch( (err) => {return err.message})
+        }).catch( (err) => {console.log(err)})
     }
 }
 
 //needs to be finished as of Monday 3/5/2018
 export function addToCart(userId, productId, price){
     console.log('hit the function');
+    console.log(`user_id: ${userId}, product_id: ${productId}, price: ${price}`);
     return {
         type: ADD_TO_CART,
-        payload: axios.post('/api/addtocart', {order_id: DEFAULT, user_id: userId, product_id: productId, unit_price: price}).then( (res) => {            
+        payload: axios.post('/api/addtocart', {user_id: userId, product_id: productId, unit_price: price}).then( (res) => {            
             return res.data;
-        }).catch( (err) => {return err.message})
+        }).catch( (err) => {console.log(err)})
     }
 }
 
@@ -50,8 +51,8 @@ const initialState = {
 };
 
 //REDUCER
-export default function reducer(state = initialState, action) {    
-    switch(action.type) {
+export default function reducer(state = initialState, action) {    console.log(action.type);
+    switch(action.type) {        
         //cases go here
 //SAVE_USER 
         case `${SAVE_USER}_PENDING`:

@@ -84,8 +84,7 @@ app.get('/api/currentuser', (req, res, next) => {
     //pulls req.user from the current user after logging in.    
     if(req.user){
         loggedInUser.push(req.user); 
-        res.status(200).json(req.user);
-        
+        res.status(200).json(req.user);        
         }
     else{ res.status(400).json({message: "User Not Logged In."});}
           
@@ -116,8 +115,6 @@ req.app.get('db').addItemToCart(userId, productId, price).then( (cart) => {
     res.status(500).json(err);
 })
 });
-
-
 
 //setting up the server to listen
 app.listen(port, () => {
