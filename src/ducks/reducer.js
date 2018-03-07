@@ -33,8 +33,7 @@ export function addToCart(userId, productId, price){
     console.log('hit the function');
     return {
         type: ADD_TO_CART,
-        payload: axios.post('/api/addtocart', {user_id: userId, product_id: productId, unit_price: price}).then( (res) => {
-            console.log('res from addToCart ',res);
+        payload: axios.post('/api/addtocart', {order_id: DEFAULT, user_id: userId, product_id: productId, unit_price: price}).then( (res) => {            
             return res.data;
         }).catch( (err) => {return err.message})
     }

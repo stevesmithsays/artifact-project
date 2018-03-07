@@ -49,7 +49,7 @@ passport.use(new Auth0Strategy({
     domain: process.env.DOMAIN,
     clientSecret: process.env.CLIENT_SECRET,
     clientID: process.env.CLIENT_ID,
-    scope: 'openid profile',
+    // scope: 'openid profile',
     callbackURL: "/auth"
 }, (accessToken, refreshToken, extraParams, profile, done) => {  
     app.get('db').getUserByAuthId([profile.id]).then( response => {        
