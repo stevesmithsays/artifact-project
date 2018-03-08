@@ -31,7 +31,8 @@ export function saveProducts(){
 //needs to be finished as of Monday 3/5/2018
 export function addToCart(userId, productId, price){
     console.log('hit the function');
-    console.log(`user_id: ${userId}, product_id: ${productId}, price: ${price}`);
+    //all three fields are still intact here with type of number
+    console.log(` dfdfd user_id: ${ typeof userId}, product_id: ${typeof productId}, price: ${typeof price}`);
     return {
         type: ADD_TO_CART,
         payload: axios.post('/api/addtocart', {user_id: userId, product_id: productId, unit_price: price}).then( (res) => {            
@@ -76,16 +77,13 @@ export default function reducer(state = initialState, action) {    console.log(a
         case `${SAVE_PRODUCTS}_REJECTED`:
         return Object.assign( {}, state, {isLoading: false, didErr: true, errMessage: action.payload});
 //ADD_TO_CART
-        case `${ADD_TO_CART}_PENDING`:
-        console.log('pending');
+        case `${ADD_TO_CART}_PENDING`:        
         return Object.assign({}, state, {isLoading: true});
 
-        case `${ADD_TO_CART}_FULFILLED`:
-        console.log('fulfilled');
+        case `${ADD_TO_CART}_FULFILLED`:        
         return Object.assign( {}, state, {isLoading: false, cart: action.payload});
 
-        case `${ADD_TO_CART}_REJECTED`:
-        console.log('rejected');
+        case `${ADD_TO_CART}_REJECTED`:        
         return Object.assign( {}, state, {isLoading: false, didErr: true, errMessage: action.payload});
 
         

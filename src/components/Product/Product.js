@@ -14,22 +14,20 @@ class Product extends Component {
         
     }
 
-    componentDidMount(){
-      // this.props.addToCart();
-    }
-
+ 
 
 render(){ 
-  if(this.props.cart.length !== 0){console.log('cart: ',this.props.cart);            
-}
+//   if(this.props.cart.length !== 0){console.log('cart: ',this.props.cart);            
+// }
              
 
   let detailedProductView = () =>{
       if(this.props.products.length !== 0){
   //variables for dynamically rendered detailed product component
-        let productId = Number(this.props.match.params.id);
+  console.log('products: ',this.props.products);
+        let productId = parseInt(this.props.match.params.id);
         let currProduct = this.props.products[`${productId}`];
-        let price = Number(this.props.products[`${productId}`].price);
+        let price = parseInt(this.props.products[`${productId}`].price);
         let name = currProduct.name;
         let image = currProduct.image;
         let userId = this.props.user.id;

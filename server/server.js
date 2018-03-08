@@ -10,6 +10,8 @@ const cookieParser = require('cookie-parser');
 
 //saves current user on the server side
 let loggedInUser = [];
+let products = [];
+
 
 //path is part of node
 const path = require('path');
@@ -96,7 +98,8 @@ app.get('/api/products', (req, res, next) => {
     req.app
       .get("db")
       .selectAllProducts()
-      .then((response) => {         
+      .then((response) => {          
+        products.push(response);     
         res.json(response);
       })
       .catch(err => {
@@ -105,9 +108,12 @@ app.get('/api/products', (req, res, next) => {
 })
 
 //cart endpoint from product.js
-app.post('/api/addtocart', (req,res, next) => {
+app.post('/api/addtocart', (req, res, next) => {
     const userId = loggedInUser[0].id;     
-    const {productId, price} = req.body;  
+    let {productId, price} = req.body;
+    //productId and price are undefined once here
+    console.log('productId: ' + typeof productId, 'price: ' + typeof price);
+
     console.log("userId: ", userId);    
 req.app.get('db').addItemToCart(userId, productId, price).then( (cart) => {      
     res.status(200).json(cart);

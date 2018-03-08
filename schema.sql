@@ -22,11 +22,22 @@ CREATE TABLE products (
 --     total_price FLOAT    
 -- )
 
+-- CREATE TABLE carts (
+--     order_id SERIAL PRIMARY KEY,
+--     user_id INT,
+--     product_id INT,
+--     unit_price FLOAT
+-- )
+
 CREATE TABLE carts (
     order_id SERIAL PRIMARY KEY,
     user_id INT,
     product_id INT,
-    unit_price FLOAT
+    unit_price FLOAT,
+    CONSTRAINT fk_users
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    CONSTRAINT fk_products
+    FOREIGN KEY (product_id) REFERENCES products(id)
 )
 
 
