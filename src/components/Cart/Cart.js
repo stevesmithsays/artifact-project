@@ -9,27 +9,22 @@ class Cart extends Component {
     constructor(props){
         super(props);
     }
-
     render(){
         let cartDisplay; 
-
         if(this.props.cart.length !== 0){           
-             cartDisplay = () => {
-                return(
-                    <div>{this.props.cart.order_id}                        
-                    </div>
-                );
-                
-
-            }
+             cartDisplay = this.props.cart.map( (curr, index) => {
+                return(<div className = 'cart-item'>
+               <span>Product Id: {curr.product_id}</span>
+               <span>Price: {curr.unit_price}</span>
+                </div>);
+             })                             
         }
 
         return(<div className = 'cart-container'>
         <h1>Shopping Cart</h1>
+        {cartDisplay}   
+            
         
-        
-        
-
         </div>)
     }
 }

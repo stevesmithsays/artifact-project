@@ -21,10 +21,9 @@ render(){
 // }
              
 
-  let detailedProductView = () =>{
+  const detailedProductView = () =>{
       if(this.props.products.length !== 0){
-  //variables for dynamically rendered detailed product component
-  console.log('products: ',this.props.products);
+  //variables for dynamically rendered detailed product component 
         let productId = parseInt(this.props.match.params.id);
         let currProduct = this.props.products[`${productId}`];
         let price = parseInt(this.props.products[`${productId}`].price);
