@@ -13,8 +13,7 @@ class Cart extends Component {
     render(){
         let cartDisplay; 
 
-        if(this.props.cart.length !== 0){
-            console.log(this.props.cart);
+        if(this.props.cart.length !== 0){           
              cartDisplay = () => {
                 return(
                     <div>{this.props.cart.order_id}                        
@@ -27,6 +26,7 @@ class Cart extends Component {
 
         return(<div className = 'cart-container'>
         <h1>Shopping Cart</h1>
+        
         
         
 

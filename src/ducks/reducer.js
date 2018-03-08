@@ -29,13 +29,11 @@ export function saveProducts(){
 }
 
 //needs to be finished as of Monday 3/5/2018
-export function addToCart(userId, productId, price){
-    console.log('hit the function');
-    //all three fields are still intact here with type of number
-    console.log(` dfdfd user_id: ${ typeof userId}, product_id: ${typeof productId}, price: ${typeof price}`);
+export function addToCart(userId, productId, price){       
     return {
         type: ADD_TO_CART,
-        payload: axios.post('/api/addtocart', {user_id: userId, product_id: productId, unit_price: price}).then( (res) => {            
+        payload: axios.post('/api/addtocart', {user_id: userId, product_id: productId, unit_price: price}).then( (res) => {       
+          
             return res.data;
         }).catch( (err) => {console.log(err)})
     }

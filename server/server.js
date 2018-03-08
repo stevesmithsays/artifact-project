@@ -6,7 +6,7 @@ const cors = require('cors');
 const passport = require('passport');
 const massive = require("massive");
 const Auth0Strategy = require('passport-auth0');
-const cookieParser = require('cookie-parser');
+
 
 //saves current user on the server side
 let loggedInUser = [];
@@ -28,9 +28,8 @@ massive(process.env.CONNECTION_STRING).then( (db) => {
 }).catch( (err) => {console.log(err);});
 
 //Top level middlewares
-app.use( json());
 app.use( cors());
-app.use(cookieParser(process.env.SESSION_SECRET))
+// app.use(process.env.SESSION_SECRET);
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -42,7 +41,7 @@ app.use(session({
 }));
 
 //auth0strategy setup
-//Checking if the user is in the database with getUserByAuthId query. If not, creatUser query will fire off and add the person into the database.
+//Checking if the user is in the database with getUserByAuthId query. If not, createUser query will fire off and add the person into the database.
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -64,6 +63,9 @@ passport.use(new Auth0Strategy({
 
     })
 }))
+
+//bodyparser middleware
+app.use(json());
 
 //passport
 passport.serializeUser( (user, done) => done(null,user));
@@ -110,11 +112,9 @@ app.get('/api/products', (req, res, next) => {
 //cart endpoint from product.js
 app.post('/api/addtocart', (req, res, next) => {
     const userId = loggedInUser[0].id;     
-    let {productId, price} = req.body;
-    //productId and price are undefined once here
-    console.log('productId: ' + typeof productId, 'price: ' + typeof price);
-
-    console.log("userId: ", userId);    
+    const productId = req.body.product_id;
+    const price = req.body.unit_price;   
+    // console.log('SERVER ENDPOINT - productId: ' + typeof productId, 'price: ' + typeof price);       
 req.app.get('db').addItemToCart(userId, productId, price).then( (cart) => {      
     res.status(200).json(cart);
 }).catch( (err) => {
