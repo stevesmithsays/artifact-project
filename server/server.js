@@ -122,6 +122,16 @@ req.app.get('db').addItemToCart(userId, productId, price).then( (cart) => {
 })
 });
 
+//cart endpoint for getting the current user's cart
+app.get('/api/getcart', (req, res, next) => {
+const userId = loggedInUser[0].id; 
+req.app.get('db').getCart(userId).then( (cart) => {
+    res.status(200).json(cart);
+}).catch( (err) => {
+    res.status(500).json(err);
+})
+});
+
 //setting up the server to listen
 app.listen(port, () => {
     console.log(`awaiting your orders on port ${port}`)

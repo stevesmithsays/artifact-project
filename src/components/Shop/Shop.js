@@ -18,7 +18,7 @@ componentDidMount(){
 }
 
     render(){ 
-        //displays and renders product cards if there are product cards to render
+        //displays and renders product cards if there are product cards to render 
         let cardDisplay;          
            
         if(this.props.products.length !== 0){            
