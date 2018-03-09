@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,gBAAiB;EACb,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,KAAK",
+"mappings": "AAAA,gBAAiB;EACb,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,KAAK;EAChB,OAAO,EAAE,GAAG",
 "sources": ["../scss/Story.scss"],
 "names": [],
 "file": "Story.css"

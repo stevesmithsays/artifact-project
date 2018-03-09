@@ -26,6 +26,25 @@ $body-font: 'Oswald', sans-serif;
 //OSWALD, SANS-SERIF
 //VOLLKORN, SERIF
 
+//MIXINS
+//parent containers in story, contact
+@mixin parent-container-style {
+    line-height: 30px;
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+//cards used in shop, cart
+@mixin card-style {
+    height: 350px;
+    width: 250px;       
+    text-align: center;    
+    border-radius: 2%;         
+
+}
+
+
+
 .app {
     min-height: 100vh;
     overflow: hidden;
