@@ -1,0 +1,38 @@
+h1 {
+    font-size: 2em;
+}
+
+.cart-container {
+    text-align: center;
+    font-size: 2em;
+    line-height: 2em;
+     
+     
+    
+}
+
+.cart-item-container {   
+    width: 80%;
+    height: auto;
+    margin: 1em auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+#cart-pic {
+    height: 150px;
+    width: 150px;
+}
+
+.cart-image-container {
+     @include card-style;
+    background-color: #D99F5B; 
+    height: 200px;
+    width: 150px;  
+   
+
+}
+

@@ -12,10 +12,10 @@
 .card-container {
   height: 350px;
   width: 250px;
-  margin: 1em;
-  background-color: #7E9EC4;
   text-align: center;
   border-radius: 2%;
+  background-color: #7E9EC4;
+  margin: 1em;
   cursor: pointer; }
 
 .card-container:hover {

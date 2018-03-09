@@ -2,6 +2,15 @@
 $card-background: #7E9EC4;
 $card-hover: #507bae;
 
+@mixin card-style {
+    height: 350px;
+    width: 250px;       
+    text-align: center;    
+    border-radius: 2%;         
+
+}
+
+
 .shop-container {
     height: auto;
     width: inherit;
@@ -16,14 +25,10 @@ $card-hover: #507bae;
 }
 
 .card-container {
-    height: 350px;
-    width: 250px;
-    margin: 1em;
-    background-color: $card-background;
-    text-align: center;    
-    border-radius: 2%;
-    cursor: pointer;
-      
+   @include card-style;
+   background-color: $card-background;
+   margin: 1em;    
+   cursor: pointer;  
     
 } 
 

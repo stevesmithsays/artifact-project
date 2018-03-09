@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 //Local Imports
-// import {getCart } 
+import { getCart } from '../../ducks/reducer';
 
 
 class Cart extends Component {
@@ -11,16 +11,20 @@ class Cart extends Component {
         super(props);
     }
 
-componentDidMount(){
-    //getcart here
+componentDidMount(){   
+    this.props.getCart();
 }
     render(){
+        console.log(this.props.cart);
         let cartDisplay; 
         if(this.props.cart.length !== 0){           
              cartDisplay = this.props.cart.map( (curr, index) => {
-                return(<div className = 'cart-item'>
-               <span key = {index}>Product Id: {curr.product_id}</span>
-               <span key = {index}>Price: {curr.unit_price}</span>
+                return(<div className = 'cart-item-container'>
+                <div className = 'cart-image-container'>
+                <img src={require(`../../assets/products/${curr.image}`)} className = 'card-pic' id = 'cart-pic' alt = 'cart-item' key = {index}/>
+                </div>               
+                <h4>{curr.name}</h4>             
+                <h4>Price:  ${curr.unit_price}</h4>                           
                 </div>);
              })                             
         }
@@ -36,7 +40,7 @@ componentDidMount(){
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, {getCart})(Cart);
 
 
 

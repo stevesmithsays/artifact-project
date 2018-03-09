@@ -200,10 +200,10 @@ h3 {
 .card-container {
   height: 350px;
   width: 250px;
-  margin: 1em;
-  background-color: #7E9EC4;
   text-align: center;
   border-radius: 2%;
+  background-color: #7E9EC4;
+  margin: 1em;
   cursor: pointer; }
 
 .card-container:hover {
@@ -289,6 +289,35 @@ h2 {
 
 #add-btn:active {
   transform: translate(1.5px, 1.5px); }
+
+h1 {
+  font-size: 2em; }
+
+.cart-container {
+  text-align: center;
+  font-size: 2em;
+  line-height: 2em; }
+
+.cart-item-container {
+  width: 80%;
+  height: auto;
+  margin: 1em auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+#cart-pic {
+  height: 150px;
+  width: 150px; }
+
+.cart-image-container {
+  height: 350px;
+  width: 250px;
+  text-align: center;
+  border-radius: 2%;
+  background-color: #D99F5B;
+  height: 200px;
+  width: 150px; }
 
 body {
   margin: 0;
