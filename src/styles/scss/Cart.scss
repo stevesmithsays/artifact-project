@@ -5,10 +5,8 @@ h1 {
 .cart-container {
     text-align: center;
     font-size: 2em;
-    line-height: 2em;
-     
-     
-    
+    line-height: 2em;    
+         
 }
 
 .cart-item-container {   
@@ -33,6 +31,19 @@ h1 {
     height: 200px;
     width: 150px;  
    
-
 }
 
+.cart-text-container {
+    text-align: right;
+}
+
+#total {  
+    border: 5px solid #D99F5B;    
+    padding: 5px;
+    text-align: left;
+    border-radius: 5px;
+    float: right;
+    margin-right: 4em;
+    margin-bottom: 2em;    
+    
+}

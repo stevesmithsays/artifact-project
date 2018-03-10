@@ -1,23 +1,23 @@
 /*
 Error: Undefined mixin 'card-style'.
-        on line 31 of src/styles/scss/Cart.scss, in `card-style'
-        from line 31 of src/styles/scss/Cart.scss
+        on line 29 of src/styles/scss/Cart.scss, in `card-style'
+        from line 29 of src/styles/scss/Cart.scss
 
-26:     height: 150px;
-27:     width: 150px;
-28: }
-29: 
-30: .cart-image-container {
-31:      @include card-style;
-32:     background-color: #D99F5B; 
-33:     height: 200px;
-34:     width: 150px;  
-35:    
-36: 
+24:     height: 150px;
+25:     width: 150px;
+26: }
+27: 
+28: .cart-image-container {
+29:      @include card-style;
+30:     background-color: #D99F5B; 
+31:     height: 200px;
+32:     width: 150px;  
+33:    
+34: }
 
 Backtrace:
-src/styles/scss/Cart.scss:31:in `card-style'
-src/styles/scss/Cart.scss:31
+src/styles/scss/Cart.scss:29:in `card-style'
+src/styles/scss/Cart.scss:29
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:98:in `block in with_mixin'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
@@ -73,4 +73,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'card-style'.\A         on line 31 of src/styles/scss/Cart.scss, in `card-style'\A         from line 31 of src/styles/scss/Cart.scss\A \A 26:     height: 150px;\A 27:     width: 150px;\A 28: }\A 29: \A 30: .cart-image-container {\A 31:      @include card-style;\A 32:     background-color: #D99F5B; \A 33:     height: 200px;\A 34:     width: 150px;  \A 35:    \A 36: "; }
+  content: "Error: Undefined mixin 'card-style'.\A         on line 29 of src/styles/scss/Cart.scss, in `card-style'\A         from line 29 of src/styles/scss/Cart.scss\A \A 24:     height: 150px;\A 25:     width: 150px;\A 26: }\A 27: \A 28: .cart-image-container {\A 29:      @include card-style;\A 30:     background-color: #D99F5B; \A 31:     height: 200px;\A 32:     width: 150px;  \A 33:    \A 34: }"; }

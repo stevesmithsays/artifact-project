@@ -9,11 +9,30 @@ import { getCart } from '../../ducks/reducer';
 class Cart extends Component {
     constructor(props){
         super(props);
+
+        this.handleTotal = this.handleTotal.bind(this);
     }
 
 componentDidMount(){   
     this.props.getCart();
+
+
 }
+
+handleTotal = () => {
+    const {cart} = this.props;
+    let total;
+    if(cart !== undefined && cart.length !== 0){
+         total = cart.map( (curr, index) => {
+            return (curr.unit_price);
+        }).reduce(function(a,b){
+            return a+b;
+        });
+    }
+    return total;
+}
+
+
     render(){
         console.log(this.props.cart);
         let cartDisplay; 
@@ -31,12 +50,13 @@ componentDidMount(){
              })                             
         }
 
-        return(<div className = 'cart-container'>
-        <h1>Shopping Cart</h1>
-        {cartDisplay}   
-            
-        
-        </div>)
+        return <div className="cart-container">
+            <h1>Shopping Cart</h1>
+            {cartDisplay}
+            <div id="total">
+              <h3>GRAND TOTAL: ${this.handleTotal()}</h3>
+            </div>
+          </div>;
     }
 }
 

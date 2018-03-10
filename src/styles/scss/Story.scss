@@ -2,3 +2,15 @@
     @include parent-container-style;    
     
 }
+
+.story-text {
+    padding: 2em;
+    width: auto;     
+
+}
+
+
+.story-pic {
+    @include splash-image-style;
+    float: left;
+}

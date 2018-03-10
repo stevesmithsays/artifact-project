@@ -183,9 +183,6 @@ a:hover {
   letter-spacing: 1.5px;
   text-align: center; }
 
-h3 {
-  margin-bottom: 1em; }
-
 .shop-container {
   height: auto;
   width: inherit;
@@ -239,13 +236,41 @@ h2 {
 
 .story-container {
   line-height: 30px;
-  font-size: 1.5em;
-  padding: 1em; }
+  font-size: 1.5em; }
+
+.story-text {
+  padding: 2em;
+  width: auto; }
+
+.story-pic {
+  display: block;
+  height: 100vh;
+  width: 50%;
+  float: left; }
 
 .contact-container {
   line-height: 30px;
   font-size: 1.5em;
-  padding: 1em; }
+  font-size: 2em; }
+
+.contact-text {
+  padding: 2em;
+  width: auto;
+  float: left;
+  line-height: 2em; }
+
+.contact-text > p {
+  line-height: 1.8em; }
+
+.contact-pic {
+  display: block;
+  height: 100vh;
+  width: 50%;
+  float: right; }
+
+.tag {
+  color: #D99F5B;
+  border-bottom: 3px solid #203145; }
 
 .detailed-container {
   text-align: center;
@@ -320,6 +345,18 @@ h1 {
   background-color: #D99F5B;
   height: 200px;
   width: 150px; }
+
+.cart-text-container {
+  text-align: right; }
+
+#total {
+  border: 5px solid #D99F5B;
+  padding: 5px;
+  text-align: left;
+  border-radius: 5px;
+  float: right;
+  margin-right: 4em;
+  margin-bottom: 2em; }
 
 body {
   margin: 0;

@@ -1,3 +1,28 @@
 .contact-container {
     @include parent-container-style;
+    font-size: 2em;
 }
+
+.contact-text {
+    padding: 2em;
+    width: auto;
+    float: left;
+    line-height: 2em;
+}
+
+.contact-text > p {
+    line-height: 1.8em;
+}
+
+.contact-pic {
+    @include splash-image-style; 
+    float: right;
+}
+
+.tag {
+    color: $secondary-dark;
+    border-bottom: 3px solid $main-color;
+}
+
+
+
