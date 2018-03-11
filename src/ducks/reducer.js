@@ -51,9 +51,10 @@ export function getCart(){
 }
 
 export function deleteFromCart(productId){
+    console.log(productId);
     return {
         type: DELETE_FROM_CART,
-        payload: axios.delete('/api/cart/deleteproduct').then( (res) => {
+        payload: axios.delete(`api/cart/${productId}`, {data: {"product": productId}}).then( (res) => {
             return res.data;
         }).catch ( (err) => {console.log(err)})
     }

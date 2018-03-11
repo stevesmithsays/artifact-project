@@ -40,8 +40,7 @@ handleDelete = (productId) => {
 }
 
 
-    render(){
-        console.log(this.props.cart);
+    render(){       
         let cartDisplay; 
         if(this.props.cart !== undefined && this.props.cart.length !== 0){ 
              cartDisplay = this.props.cart.map( (curr, index) => {

@@ -134,12 +134,12 @@ req.app.get('db').getCart(userId).then( (cart) => {
 
 //cart endpoint for deleting an item from user's cart
 //req.body is empty? productID is undefined...
-app.delete('/api/cart/deleteproduct', (req, res, next) => {
-    const userId = loggedInUser[0].id;
-    const productId = req.body.product_id;
-    console.log(req.body);
+app.delete(`/api/cart/:productId`, (req, res, next) => {   
+    console.log('res body: ',res.body);
+    const userId = req.user.id;
+    const productId = req.body.product; 
+    console.log('req body: ', req.body);
     console.log(userId, productId);
-    console.log('hit the endpoint');
     req.app.get('db').deleteItemFromCart(userId, productId).then( (cart) => {
         res.status(200).json(cart);
     }).catch( (err) => {

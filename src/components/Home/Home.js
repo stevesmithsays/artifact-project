@@ -9,8 +9,7 @@ import { saveUser } from '../../ducks/reducer';
 
 class Home extends Component {
     componentDidMount(){      
-      this.props.saveUser();     
-                     
+      this.props.saveUser();              
     }
 
 
