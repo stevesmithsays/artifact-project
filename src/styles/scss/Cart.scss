@@ -5,7 +5,8 @@ h1 {
 .cart-container {
     text-align: center;
     font-size: 2em;
-    line-height: 2em;    
+    line-height: 2em;   
+       
          
 }
 
@@ -16,6 +17,15 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
+    
+    
+}
+
+//applies the styles to the second last child in the container
+.cart-item-container:nth-last-child(2) {
+    padding-bottom: 1em;
+    border-bottom: 5px solid $main-color;
 }
 
 
@@ -27,7 +37,7 @@ h1 {
 
 .cart-image-container {
      @include card-style;
-    background-color: #D99F5B; 
+    background-color: $secondary-dark; 
     height: 200px;
     width: 150px;  
    
@@ -38,7 +48,7 @@ h1 {
 }
 
 #total {  
-    border: 5px solid #D99F5B;    
+    border-bottom: 5px solid #D99F5B;    
     padding: 5px;
     text-align: left;
     border-radius: 5px;

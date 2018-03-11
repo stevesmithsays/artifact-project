@@ -1,28 +1,28 @@
 /*
-Error: Undefined mixin 'card-style'.
-        on line 29 of src/styles/scss/Cart.scss, in `card-style'
-        from line 29 of src/styles/scss/Cart.scss
+Error: Undefined variable: "$main-color".
+        on line 28 of src/styles/scss/Cart.scss
 
-24:     height: 150px;
-25:     width: 150px;
-26: }
-27: 
-28: .cart-image-container {
-29:      @include card-style;
-30:     background-color: #D99F5B; 
-31:     height: 200px;
-32:     width: 150px;  
-33:    
-34: }
+23: }
+24: 
+25: //applies the styles to the second last child in the container
+26: .cart-item-container:nth-last-child(2) {
+27:     padding-bottom: 1em;
+28:     border-bottom: 5px solid $main-color;
+29: }
+30: 
+31: 
+32: 
+33: #cart-pic {
 
 Backtrace:
-src/styles/scss/Cart.scss:29:in `card-style'
-src/styles/scss/Cart.scss:29
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:98:in `block in with_mixin'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:98:in `with_mixin'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:350:in `visit_mixin'
+src/styles/scss/Cart.scss:28
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `map'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `_perform'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
@@ -73,4 +73,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'card-style'.\A         on line 29 of src/styles/scss/Cart.scss, in `card-style'\A         from line 29 of src/styles/scss/Cart.scss\A \A 24:     height: 150px;\A 25:     width: 150px;\A 26: }\A 27: \A 28: .cart-image-container {\A 29:      @include card-style;\A 30:     background-color: #D99F5B; \A 31:     height: 200px;\A 32:     width: 150px;  \A 33:    \A 34: }"; }
+  content: "Error: Undefined variable: \"$main-color\".\A         on line 28 of src/styles/scss/Cart.scss\A \A 23: }\A 24: \A 25: //applies the styles to the second last child in the container\A 26: .cart-item-container:nth-last-child(2) {\A 27:     padding-bottom: 1em;\A 28:     border-bottom: 5px solid $main-color;\A 29: }\A 30: \A 31: \A 32: \A 33: #cart-pic {"; }

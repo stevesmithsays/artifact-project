@@ -6,10 +6,10 @@ Error: Undefined mixin 'parent-container-style'.
 1: .story-container {
 2:     @include parent-container-style;    
 3:     
-4: }
-5: 
-6: .story-text {
-7:     padding: 2em;
+4:     
+5: }
+6: 
+7: .story-text {
 
 Backtrace:
 src/styles/scss/Story.scss:2:in `parent-container-style'
@@ -69,4 +69,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'parent-container-style'.\A         on line 2 of src/styles/scss/Story.scss, in `parent-container-style'\A         from line 2 of src/styles/scss/Story.scss\A \A 1: .story-container {\A 2:     @include parent-container-style;    \A 3:     \A 4: }\A 5: \A 6: .story-text {\A 7:     padding: 2em;"; }
+  content: "Error: Undefined mixin 'parent-container-style'.\A         on line 2 of src/styles/scss/Story.scss, in `parent-container-style'\A         from line 2 of src/styles/scss/Story.scss\A \A 1: .story-container {\A 2:     @include parent-container-style;    \A 3:     \A 4:     \A 5: }\A 6: \A 7: .story-text {"; }
