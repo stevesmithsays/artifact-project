@@ -17,20 +17,28 @@ class Product extends Component {
  
 
 render(){ 
-//   if(this.props.cart.length !== 0){console.log('cart: ',this.props.cart);            
-// }
              
 
   const detailedProductView = () =>{
+    // let productId = parseInt(this.props.match.params.id);
       if(this.props.products.length !== 0){
   //variables for dynamically rendered detailed product component 
-        let productId = parseInt(this.props.match.params.id);
-        let currProduct = this.props.products[`${productId}`];
-        let price = parseInt(this.props.products[`${productId}`].price);
+  console.log('products arr ',this.props.products);
+        
+        // console.log(productId);
+        let productIndex = this.props.match.params.id;
+        let currProduct = this.props.products[`${productIndex}`];
+        console.log(currProduct);
+        let productId = currProduct.id;
+        let price = parseInt(this.props.products[`${productIndex}`].price);
         let name = currProduct.name;
         let image = currProduct.image;
         let userId = this.props.user.id;
-        console.log("userId :", userId, "productId :", productId, "price: ", price);
+       
+         
+         
+        
+        // console.log("PRODUCTVIEW - userId :", userId, "productId :", productId, "price: ", price);
        
 
           return (
