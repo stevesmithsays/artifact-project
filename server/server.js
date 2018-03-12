@@ -87,10 +87,17 @@ app.get(
   "/auth",
   passport.authenticate("auth0", {
     successRedirect: "http://localhost:3000/#/",
-    failureRedirect: "http://localhost:3000/#/login",
+    failureRedirect: "http://localhost:3000/auth",
     failureFlash: true
   })
 );
+
+app.get("/api/logout", (req, res, next) => {
+  req.logout();
+  req.session.destroy(() => {
+    res.redirect("http://localhost:3000/#/");
+  });
+});
 
 //endpoint for current user's data to be stored in the redux store
 app.get("/api/currentuser", (req, res, next) => {

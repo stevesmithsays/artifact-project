@@ -52,6 +52,21 @@ $body-font: 'Oswald', sans-serif;
     width: 50%;
 }
 
+@mixin btn-style {
+     background-color: $background-color;  
+    cursor: pointer;    
+    border: 3px solid $main-color;    
+    border-radius: 5px;
+      
+    font-family: $body-font;     
+    transition: background-color 0.2s ease-out, color 0.2s ease-out; 
+}
+
+@mixin btn-hover {
+    background-color: $main-color;
+    color: $secondary-dark;
+    transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
 
 .app {
     min-height: 100vh;

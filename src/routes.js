@@ -18,6 +18,11 @@ export default (
         <Route path = '/contact' component = {Contact}/>
         <Route path = '/profile' component = {Profile}/>
         <Route path = '/cart' component = {Cart} />     
+        <Route path = "*" render={() => {
+           return <div>
+                <p>404: NOT FOUND</p>
+            </div>
+        }} />
     </Switch>
 )
 
