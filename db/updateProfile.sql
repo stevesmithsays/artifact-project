@@ -1,0 +1,1 @@
+UPDATE users SET favorite_style = $1, favorite_origin = $2 WHERE id = $3;

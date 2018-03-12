@@ -6,6 +6,7 @@ const SAVE_PRODUCTS = "SAVE_PRODUCTS";
 const ADD_TO_CART = "ADD_TO_CART";
 const GET_CART = "GET_CART";
 const DELETE_FROM_CART = 'DELETE_FROM_CART';
+const UPDATE_PROFILE = 'UPDATE_PROFILE';
 
 
 
@@ -60,10 +61,23 @@ export function deleteFromCart(productId){
     }
 }
 
+//favorite is favorite_origin in DB, userId is id
+export function updateProfile(style, origin, id){
+    console.log(id);
+    return {
+        type: UPDATE_PROFILE,
+        payload: axios.put(`/api/profile/${id}`, {favorite_style: style, favorite_origin: origin}).then( (res) =>{
+            return res.data;
+
+        }).catch((err) => {console.log(err)})
+    }
+}
+
 //INITIAL STATE
 const initialState = {
     user: [],
     cart: [],
+    profile: [],
     isLoading: false,
     didErr: false,
     errMessage: null,
@@ -123,7 +137,15 @@ export default function reducer(state = initialState, action) {
 
         case `${DELETE_FROM_CART}_REJECTED`:
         return Object.assign({}, state, {isLoading: false, errMessage: action.payload});
+//UPDATE_PROFILE
+        case `${UPDATE_PROFILE}_PENDING`:
+        return Object.assign({}, state, {isLoading: true});
 
+        case `${UPDATE_PROFILE}_FULFILLED`:
+        return Object.assign({}, state, {isLoading: false, profile: action.payload});
+
+        case `${UPDATE_PROFILE}_REJECTED`:
+        return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
         
         default: 
         

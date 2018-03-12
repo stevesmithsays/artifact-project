@@ -33,7 +33,7 @@ handleTotal = () => {
 }
 
 handleDelete = (productId) => {
-    const {user, deleteFromCart, getCart} = this.props;
+    const {deleteFromCart, getCart} = this.props;
     console.log('handleDelete parameter: ', productId);
     deleteFromCart(productId);
     getCart();

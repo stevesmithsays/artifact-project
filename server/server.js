@@ -166,6 +166,19 @@ app.delete(`/api/cart/:productId`, (req, res, next) => {
     });
 });
 
+//cart endpoint for updating user's profile
+app.put(`/api/profile/:id`, (req, res, next) => {
+  const style = req.body.favorite_style;
+  const origin = req.body.favorite_origin;
+  const id = req.user.id;
+  console.log(id, style, origin);
+  req.app.get("db").updateProfile(style, origin, id).then((profile) => {
+    res.status(200).json(profile);
+  }).catch(err => {
+    res.status(500).json(err);
+  });
+});
+
 //setting up the server to listen
 app.listen(port, () => {
   console.log(`awaiting your orders on port ${port}`);

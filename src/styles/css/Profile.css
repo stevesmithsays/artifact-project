@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+  margin-bottom: 2em; }
+
+.profile-info {
+  display: block;
+  margin: 0 auto;
+  text-align: justify;
+  width: 40%; }
+
+.update-btn {
+  display: block;
+  margin: 2em auto; }
+
+/*# sourceMappingURL=Profile.css.map */

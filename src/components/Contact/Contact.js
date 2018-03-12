@@ -12,7 +12,7 @@ const Contact = () => {
            18103-6053 
         </p>        
         </section>
-        <img src = {require('../../assets/products/wave2.jpg')} className = 'contact-pic'/>
+        <img src = {require('../../assets/products/wave2.jpg')} className = 'contact-pic' alt = 'wave'/>
         </div>)
 }
 

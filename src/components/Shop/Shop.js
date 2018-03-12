@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 import { saveProducts } from "../../ducks/reducer";
 
 class Shop extends Component {
-  constructor() {
-    super();
-  }
+ 
 
   //on page load, pull all of the available products from the database
   componentDidMount() {
