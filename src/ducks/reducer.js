@@ -61,9 +61,10 @@ export function deleteFromCart(productId){
     }
 }
 
-//favorite is favorite_origin in DB, userId is id
+//updates the current user's profile in the database
 export function updateProfile(style, origin, id){
-    console.log(id);
+    
+   
     return {
         type: UPDATE_PROFILE,
         payload: axios.put(`/api/profile/${id}`, {favorite_style: style, favorite_origin: origin}).then( (res) =>{

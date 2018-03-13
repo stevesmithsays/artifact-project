@@ -1,7 +1,7 @@
 .profile-container {
     @include parent-container-style;
     font-size: 2em;
-    padding: 2em;
+    
 }
 
 h1 {    
@@ -11,10 +11,10 @@ h1 {
 
 
 .profile-text {
-    padding: 1em;
-    display: block;
-    margin: 0 auto;     
-    width: 60%;
+    padding: 3em;
+    // display: block;         
+    width: 50%;
+    float: left;
 }
 
 .update-btn {
@@ -40,10 +40,23 @@ h1 {
 input {
     margin: 2em 0;
     height: 10vh;
-    width: 40vw;
+    width: 35vw;
     border-radius: 5px;
     border: 2px solid $main-color;
     font-size: 1em;
+    color: $input-text;
 }
 
+input:focus {
+    outline: 0;
+    height: 10vh+1vh;
+    width: 35vw+1vw;   
+}
 
+.profile-pic {
+    @include splash-image-style;
+    height: auto;       
+    float: right;
+   
+   
+}

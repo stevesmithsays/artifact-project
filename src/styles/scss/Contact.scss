@@ -14,10 +14,6 @@
     line-height: 1.8em;
 }
 
-.contact-pic {
-    @include splash-image-style; 
-    float: right;
-}
 
 .tag {
     color: $secondary-dark;
@@ -25,5 +21,10 @@
 
 }
 
+.contact-pic {
+    @include splash-image-style;
+    
+    float: right;
+}
 
 
