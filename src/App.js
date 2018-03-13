@@ -1,29 +1,25 @@
-//Local Imports
+//Foreign Imports
 import React, { Component } from 'react';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-//Foreign Imports
+
+
+
+//Local Imports
 import routes from './routes';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 
 class App extends Component {
-
-//Requesting to the test endpoint
-  componentDidMount(){
-    //test endpoint moved to home and being used to grab current user
-
-  }
-
   render() {     
       
     return (
       <div className="app">
         <Header />
-        {routes}   
-        <Footer />      
+        {routes}         
+        <Footer />
       </div>
     );
   }

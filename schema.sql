@@ -15,20 +15,6 @@ CREATE TABLE products (
     
 )
 
--- CREATE TABLE carts (
---     user_id SERIAL PRIMARY KEY,
---     product_id INT,
---     unit_price FLOAT,
---     total_price FLOAT    
--- )
-
--- CREATE TABLE carts (
---     order_id SERIAL PRIMARY KEY,
---     user_id INT,
---     product_id INT,
---     unit_price FLOAT
--- )
-
 CREATE TABLE carts (
     order_id SERIAL PRIMARY KEY,
     user_id INT,

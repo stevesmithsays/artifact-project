@@ -7,6 +7,11 @@ const passport = require("passport");
 const massive = require("massive");
 const Auth0Strategy = require("passport-auth0");
 
+//server side stripe being set up here
+const configureStripe = require('stripe');
+
+const stripe = configureStripe(process.env.STRIPE_SECRET_KEY);
+
 //saves current user on the server side
 let loggedInUser = [];
 let products = [];
@@ -185,6 +190,24 @@ app.put(`/api/profile/:id`, (req, res, next) => {
     res.status(500).json(err);
   });
 });
+
+//Handles response from stripe on the endpoint below
+const postStripeCharge = res => (stripeErr, stripeRes) => {
+    if (stripeErr) {
+        res.status(500).json({error: stripeErr});
+
+    } else {
+        res.status(200).json({success: stripeRes});
+    }
+}
+
+
+
+//endpoint for handling payments through Stripe
+app.post('/api/cart/checkout', (req, res) => {
+  console.log('req.body on stripe server endpnt:', req.body);
+        stripe.charges.create(req.body, postStripeCharge());
+    });
 
 //setting up the server to listen
 app.listen(port, () => {

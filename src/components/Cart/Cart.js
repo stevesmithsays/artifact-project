@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 //Local Imports
+import Checkout from '../Checkout/Checkout';
 import { getCart } from '../../ducks/reducer';
 import { deleteFromCart } from '../../ducks/reducer';
-
 
 class Cart extends Component {
     constructor(props){
@@ -67,6 +67,9 @@ handleDelete = (productId) => {
             <div id="total">
             <h3>GRAND TOTAL: ${this.handleTotal()}</h3>
             </div>
+             <Checkout name = {'Artifact Fine Goods LLC'}
+        description = {'Please enter payment information below.'}
+        amount = {1}/> 
           </div>;
     }
 }
