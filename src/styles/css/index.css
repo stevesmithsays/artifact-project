@@ -242,7 +242,8 @@ h2 {
 
 .story-text {
   padding: 2em;
-  width: auto; }
+  width: 50%;
+  float: right; }
 
 .story-pic {
   display: block;

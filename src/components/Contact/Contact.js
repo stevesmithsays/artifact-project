@@ -6,7 +6,7 @@ const Contact = () => {
         <span className = 'tag'>EMAIL: </span><span>INFO@ARTIFACT.COM</span><br/>
         <span className = 'tag'>PHONE: </span><span>484.123.4567</span><br/>
         <span className = 'tag'>ADDRESS:</span>
-        <p>ARTIFACT ANTIQUES LTD<br/>
+        <p>ARTIFACT FINE GOODS LLC.<br/>
            101 S. ORANGEBLOSSOM BLVD<br/>
            TENERIFE, PENNSYLVANIA<br/>
            18103-6053 
