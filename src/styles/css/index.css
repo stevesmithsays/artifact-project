@@ -282,25 +282,39 @@ h2 {
 
 .story-text {
   padding: 2em;
-  width: 50%;
-  float: right; }
+  width: 100%; }
 
 .story-pic {
   display: block;
-  height: 100vh;
-  width: 50%;
-  float: left; }
+  min-height: 50vh;
+  width: 100vw; }
 
+@media screen and (min-width: 1300px) and (orientation: landscape) {
+  .story-text {
+    padding: 2em;
+    width: 50%;
+    float: right; }
+
+  .story-pic {
+    display: block;
+    min-height: 100vh;
+    width: 50%;
+    float: left; } }
 .contact-container {
   line-height: 30px;
   font-size: 1.5em;
-  font-size: 2em; }
+  font-size: 1.8em; }
 
 .contact-text {
   padding: 2em;
   width: auto;
-  float: left;
-  line-height: 2em; }
+  line-height: 2em;
+  margin: 0 auto; }
+
+.contact-pic {
+  display: block;
+  min-height: 50vh;
+  width: 100vw; }
 
 .contact-text > p {
   line-height: 1.8em; }
@@ -309,12 +323,28 @@ h2 {
   color: #D99F5B;
   border-bottom: 3px solid #203145; }
 
-.contact-pic {
-  display: block;
-  height: 100vh;
-  width: 50%;
-  float: right; }
+@media screen and (min-width: 680px) and (max-width: 1299px) and (orientation: landscape) {
+  .contact-container {
+    font-size: 1.5em; } }
+@media screen and (min-width: 1300px) and (orientation: landscape) {
+  .contact-container {
+    font-size: 2.5em; }
 
+  .contact-text {
+    padding: 2em;
+    width: auto;
+    float: left;
+    line-height: 2em; }
+
+  .contact-text > p {
+    line-height: 1.8em;
+    font-size: 0.5em; }
+
+  .contact-pic {
+    display: block;
+    min-height: 100vh;
+    width: 50%;
+    float: right; } }
 .detailed-container {
   text-align: center;
   margin: 2em;
@@ -407,19 +437,55 @@ h1 {
   margin-right: 4em;
   margin-bottom: 2em; }
 
+.delete-item {
+  background-color: #CFD2D7;
+  cursor: pointer;
+  border: 3px solid #203145;
+  border-radius: 5px;
+  font-family: "Oswald", sans-serif;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  padding: 2px;
+  font-size: .5em; }
+
+.delete-item:hover {
+  background-color: #203145;
+  color: #D99F5B;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in; }
+
+.delete-item:focus {
+  outline: 0; }
+
+.delete-item:active {
+  transform: translate(1.5px, 1.5px); }
+
 .profile-container {
   line-height: 30px;
   font-size: 1.5em;
-  font-size: 2em; }
+  font-size: 1.5em; }
+
+.profile-text {
+  padding: 2em;
+  width: 100%; }
 
 h1 {
   text-align: left;
   margin-bottom: .8em; }
 
-.profile-text {
-  padding: 3em;
-  width: 50%;
-  float: left; }
+input {
+  margin: 2em 0;
+  height: 10vh;
+  width: 35vw;
+  border-radius: 5px;
+  border: 2px solid #203145;
+  font-size: 1em;
+  color: #763F22;
+  padding: 0;
+  box-sizing: border-box; }
+
+input:focus {
+  outline: 0;
+  height: 11vh;
+  width: 41vw; }
 
 .update-btn {
   background-color: #CFD2D7;
@@ -444,27 +510,60 @@ h1 {
 .update-btn:active {
   transform: translate(1.5px, 1.5px); }
 
-input {
-  margin: 2em 0;
-  height: 10vh;
-  width: 35vw;
-  border-radius: 5px;
-  border: 2px solid #203145;
-  font-size: 1em;
-  color: #763F22; }
-
-input:focus {
-  outline: 0;
-  height: 11vh;
-  width: 36vw; }
-
 .profile-pic {
   display: block;
-  height: 100vh;
+  min-height: 100vh;
   width: 50%;
-  height: auto;
-  float: right; }
+  display: block;
+  max-height: 40vh;
+  width: 100vw; }
 
+.tag {
+  line-height: 1.8em; }
+
+@media screen and (min-width: 570px) and (orientation: vertical) {
+  .profile-text {
+    display: block;
+    margin: 0 auto; } }
+@media screen and (min-width: 1300px) and (orientation: landscape) {
+  .profile-container {
+    line-height: 30px;
+    font-size: 1.5em;
+    font-size: 1.2em; }
+
+  h1 {
+    text-align: left;
+    margin-bottom: .8em;
+    font-size: 2.0em; }
+
+  .profile-text {
+    padding: 3em;
+    width: 50%;
+    float: left; }
+
+  input {
+    margin: 2em 0;
+    height: 10vh;
+    width: 35vw;
+    border-radius: 5px;
+    border: 2px solid #203145;
+    font-size: 1em;
+    color: #763F22; }
+
+  input:focus {
+    outline: 0;
+    height: 11vh;
+    width: 36vw; }
+
+  .profile-pic {
+    display: block;
+    min-height: 100vh;
+    width: 50%;
+    min-height: 100vh;
+    float: right; }
+
+  .tag {
+    font-size: 1.3em; } }
 .checkout-container {
   float: right; }
 

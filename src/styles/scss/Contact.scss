@@ -1,17 +1,23 @@
 .contact-container {
     @include parent-container-style;
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 .contact-text {
     padding: 2em;
-    width: auto;
-    float: left;
+    width: auto;    
     line-height: 2em;
+    margin: 0 auto;
+}
+
+.contact-pic {
+    display: block;
+    min-height: 50vh;
+    width: 100vw;     
 }
 
 .contact-text > p {
-    line-height: 1.8em;
+    line-height: 1.8em;    
 }
 
 
@@ -21,10 +27,41 @@
 
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
+@media screen and (min-width: 680px) and (max-width: 1299px) and (orientation: landscape){
+    .contact-container {
+        font-size: 1.5em;
+    }
+
+
+}
+
+@media screen and (min-width: 1300px) and (orientation: landscape){
+.contact-container {    
+    font-size: 2.5em;
+}
+
+.contact-text {    
+    padding: 2em;
+    width: auto;
+    float: left;
+    line-height: 2em;
+}
+
+.contact-text > p {
+    line-height: 1.8em;
+    font-size: 0.5em;
+}
+
 .contact-pic {
     @include splash-image-style;
-    
-    float: right;
+    float: right;    
 }
+
+
+}
+
+
 
 

@@ -1,6 +1,12 @@
 .profile-container {
     @include parent-container-style;
-    font-size: 2em;
+    font-size: 1.5em;
+    
+}
+
+.profile-text {
+    padding: 2em;           
+    width: 100%;
     
 }
 
@@ -9,13 +15,24 @@ h1 {
     margin-bottom: .8em;
 }
 
-
-.profile-text {
-    padding: 3em;
-    // display: block;         
-    width: 50%;
-    float: left;
+input {
+    margin: 2em 0;
+    height: 10vh;
+    width: 35vw;
+    border-radius: 5px;
+    border: 2px solid $main-color;
+    font-size: 1em;
+    color: $input-text;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+input:focus {
+    outline: 0;
+    height: 10vh+1vh;
+    width: 40vw+1vw;   
+}
+
 
 .update-btn {
     @include btn-style;
@@ -37,6 +54,53 @@ h1 {
     transform: translate(1.5px, 1.5px);
 }
 
+.profile-pic {
+    @include splash-image-style;
+    display: block;
+    max-height: 40vh;
+    width: 100vw;       
+   
+   
+}
+
+.tag {
+    line-height: 1.8em;
+}
+
+
+//////////////////////////////////////////////////////////////////
+@media screen and (min-width: 570px) and (orientation: vertical){
+.profile-text {
+   display: block;
+   margin: 0 auto;
+    
+}
+
+}
+
+@media screen and (min-width: 1300px) and (orientation: landscape){
+
+.profile-container {
+    @include parent-container-style;
+    font-size: 1.2em;
+    
+}
+
+h1 {    
+    text-align: left;  
+    margin-bottom: .8em;
+    font-size: 2.0em;
+}
+
+
+.profile-text {
+    padding: 3em;           
+    width: 50%;
+    float: left;
+}
+
+
+
 input {
     margin: 2em 0;
     height: 10vh;
@@ -55,8 +119,13 @@ input:focus {
 
 .profile-pic {
     @include splash-image-style;
-    height: auto;       
+    min-height: 100vh;       
     float: right;
    
    
+}
+
+.tag {
+    font-size: 1.3em;
+}
 }

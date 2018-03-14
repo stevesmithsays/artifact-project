@@ -57,3 +57,24 @@ h1 {
     margin-bottom: 2em;    
     
 }
+
+
+.delete-item {
+    @include btn-style;
+    padding: 2px;
+    font-size: .5em;    
+
+}
+
+.delete-item:hover {
+    @include btn-hover;
+}
+
+.delete-item:focus {
+    outline: 0;
+}
+
+.delete-item:active {
+    transform: translate(1.5px, 1.5px);
+}
+

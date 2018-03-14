@@ -6,6 +6,26 @@
 
 .story-text {
     padding: 2em;
+    width: 100%;
+      
+    
+    
+}
+
+.story-pic {
+    display: block;
+    min-height: 50vh;
+    width: 100vw;
+    
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+@media screen and (min-width: 1300px) and (orientation: landscape){
+
+.story-text {
+    padding: 2em;
     width: 50%;    
     float: right;
 }
@@ -15,3 +35,8 @@
     @include splash-image-style;
     float: left;
 }
+
+
+
+}
+
