@@ -6,11 +6,12 @@ const cors = require("cors");
 const passport = require("passport");
 const massive = require("massive");
 const Auth0Strategy = require("passport-auth0");
+const {STRIPE_SECRET_KEY, CONNECTION_STRING, SESSION_SECRET, DOMAIN, CLIENT_SECRET, CLIENT_ID} = process.env;
 
 //server side stripe being set up here
 const configureStripe = require('stripe');
 
-const stripe = configureStripe(process.env.STRIPE_SECRET_KEY);
+const stripe = configureStripe(STRIPE_SECRET_KEY);
 
 //saves current user on the server side
 let loggedInUser = [];
@@ -26,7 +27,7 @@ const port = 3002;
 const app = express();
 
 //hooking up to the database
-massive(process.env.CONNECTION_STRING)
+massive(CONNECTION_STRING)
   .then(db => {
     app.set("db", db);
   })
@@ -36,10 +37,9 @@ massive(process.env.CONNECTION_STRING)
 
 //Top level middlewares
 app.use(cors());
-// app.use(process.env.SESSION_SECRET);
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -56,10 +56,9 @@ app.use(passport.session());
 passport.use(
   new Auth0Strategy(
     {
-      domain: process.env.DOMAIN,
-      clientSecret: process.env.CLIENT_SECRET,
-      clientID: process.env.CLIENT_ID,
-      // scope: 'openid profile',
+      domain: DOMAIN,
+      clientSecret: CLIENT_SECRET,
+      clientID: CLIENT_ID,      
       callbackURL: "/auth"
     },
     (accessToken, refreshToken, extraParams, profile, done) => {     
@@ -87,7 +86,9 @@ app.use(json());
 passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((user, done) => done(null, user));
 
-//auth endpoint
+//ENDPOINTS
+
+//auth 
 app.get(
   "/auth",
   passport.authenticate("auth0", {
@@ -97,6 +98,7 @@ app.get(
   })
 );
 
+//logout endpoint
 app.get("/api/logout", (req, res, next) => {
   req.logout();
   req.session.destroy(() => {
@@ -161,7 +163,6 @@ app.get("/api/getcart", (req, res, next) => {
 });
 
 //cart endpoint for deleting an item from user's cart
-//req.body is empty? productID is undefined...
 app.delete(`/api/cart/:productId`, (req, res, next) => { 
   const userId = req.user.id;
   const productId = req.body.product;
@@ -204,10 +205,10 @@ const postStripeCharge = res => (stripeErr, stripeRes) => {
 
 
 //endpoint for handling payments through Stripe
-app.post('/api/cart/checkout', (req, res) => {
-  console.log('req.body on stripe server endpnt:', req.body);
-        stripe.charges.create(req.body, postStripeCharge());
+app.post('/api/cart/checkout', (req, res) => { 
+        stripe.charges.create(req.body, postStripeCharge(res));
     });
+
 
 //setting up the server to listen
 app.listen(port, () => {
