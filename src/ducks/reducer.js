@@ -91,16 +91,13 @@ export default function reducer(state = initialState, action) {
     switch(action.type) {      
        
 //SAVE_USER 
-        case `${SAVE_USER}_PENDING`:
-       
+        case `${SAVE_USER}_PENDING`:       
         return Object.assign({}, state, {isLoading: true});
 
-        case `${SAVE_USER}_FULFILLED`:
-        
+        case `${SAVE_USER}_FULFILLED`:        
         return Object.assign({}, state, {isLoading: false, user: action.payload});
 
-        case `${SAVE_USER}_REJECTED`:
-        
+        case `${SAVE_USER}_REJECTED`:        
         return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
 //SAVE_PRODUCTS 
         case `${SAVE_PRODUCTS}_PENDING`:

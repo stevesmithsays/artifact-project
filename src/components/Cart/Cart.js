@@ -10,13 +10,14 @@ import { deleteFromCart } from '../../ducks/reducer';
 class Cart extends Component {
     constructor(props){
         super(props);
+       
 
         this.handleTotal = this.handleTotal.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
     }
 
 componentDidMount(){   
-    this.props.getCart();
+    this.props.getCart();    
 }
 
 handleTotal = () => {
@@ -33,14 +34,16 @@ handleTotal = () => {
 }
 
 handleDelete = (productId) => {
-    const {deleteFromCart, getCart} = this.props;
-    console.log('handleDelete parameter: ', productId);
+    const {deleteFromCart, getCart} = this.props;   
     deleteFromCart(productId);
     getCart();
 }
 
 
-    render(){            
+
+
+    render(){      
+            
         let cartDisplay; 
         if(this.props.cart !== undefined && this.props.cart.length !== 0){ 
              cartDisplay = this.props.cart.map( (curr, index) => {
@@ -66,10 +69,11 @@ handleDelete = (productId) => {
             {cartDisplay}
             <div id="total">
             <h3>GRAND TOTAL: ${this.handleTotal()}</h3>
+            <Checkout name = {'Artifact Fine Goods LLC'}
+        description = {'Thank you for shopping with us!'}
+        amount = {this.handleTotal()}/> 
             </div>
-             <Checkout name = {'Artifact Fine Goods LLC'}
-        description = {'Please enter payment information below.'}
-        amount = {1}/> 
+             
           </div>;
     }
 }

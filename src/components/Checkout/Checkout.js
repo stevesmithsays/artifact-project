@@ -1,6 +1,7 @@
 //Foreign imports
 import React from 'react';
 import axios from 'axios';
+import {connect} from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 
 const {REACT_APP_PAYMENT_SERVER_URL_TEST,REACT_APP_STRIPE_PUBLIC_KEY } = process.env;
@@ -28,10 +29,11 @@ const onToken = (amount, description) => token => axios.post(REACT_APP_PAYMENT_S
 }).then(successPayment).catch(errorPayment);
 
 //actual Checkout Component
-const Checkout = ({ name, description, amount}) => {
-    console.log('from checkout component: ',this.props.cart);    
-return(<StripeCheckout name = {name} description ={description} amount = {fromDollarToCent(amount)} token = {onToken(amount, description)} currency = {CURRENCY} stripeKey = {REACT_APP_STRIPE_PUBLIC_KEY} />);
+const Checkout = (props) => {    
+return(<div className = 'checkout-container'><StripeCheckout name = {props.name} description ={props.description} amount = {fromDollarToCent(props.amount)} token = {onToken(props.amount, props.description)} currency = {CURRENCY} stripeKey = {REACT_APP_STRIPE_PUBLIC_KEY} /></div>);
 };
 
-export default Checkout;
+const mapStatetoProps = state => state;
+
+export default connect(mapStatetoProps)(Checkout);
 

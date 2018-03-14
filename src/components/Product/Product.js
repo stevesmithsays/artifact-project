@@ -7,8 +7,7 @@ import {addToCart} from '../../ducks/reducer';
 
 
 
-class Product extends Component {
-    
+class Product extends Component {    
  
 
 render(){ 
