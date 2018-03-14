@@ -1,70 +1,476 @@
-/*
-Error: Invalid CSS after "@media": expected media query (e.g. print, screen, print and screen), was ""
-        on line 69 of src/styles/scss/Header.scss
-        from line 3 of src/styles/scss/index.scss
-
-64:     color: $action-text;
-65: }
-66: 
-67: @media
-
-Backtrace:
-src/styles/scss/Header.scss:69
-src/styles/scss/index.scss:3
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1278:in `expected'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1208:in `expected'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1188:in `expr!'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:421:in `media_directive'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:234:in `special_directive'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:209:in `directive'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:696:in `block_child'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:689:in `block_contents'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:137:in `stylesheet'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:41:in `parse'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/engine.rb:414:in `_to_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/engine.rb:321:in `to_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:327:in `block in visit_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:161:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/engine.rb:307:in `render_with_sourcemap'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:320:in `block in watch'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"@media\": expected media query (e.g. print, screen, print and screen), was \"\"\A         on line 69 of src/styles/scss/Header.scss\A         from line 3 of src/styles/scss/index.scss\A \A 64:     color: $action-text;\A 65: }\A 66: \A 67: @media"; }
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.app {
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 15vh;
+  background-color: #CFD2D7;
+  color: #203145; }
+
+.header-container {
+  height: 15vh;
+  width: 100%;
+  padding: 2em;
+  background-color: #203145;
+  color: #EEFEDC;
+  letter-spacing: 1.5px; }
+
+.logo-container {
+  display: inline-flex; }
+
+.logo {
+  font-family: "Vollkorn", serif;
+  cursor: pointer;
+  font-size: 1.7em; }
+
+.nav-container {
+  display: block;
+  float: right; }
+
+.nav-element {
+  display: none; }
+
+a {
+  text-decoration: none;
+  color: #EEFEDC; }
+
+a:hover {
+  text-decoration: none;
+  color: #FECB88; }
+
+.mobile-menu {
+  height: 3.5em;
+  width: 3.5em;
+  float: right;
+  margin-top: -1.5em; }
+
+@media screen and (min-width: 600px) and (orientation: landscape) {
+  .mobile-menu {
+    display: none; }
+
+  .nav-container {
+    display: inline-flex;
+    float: right; }
+
+  .nav-element {
+    display: inline-flex;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.2em;
+    margin: 0 .5rem; }
+
+  .nav-element:hover {
+    color: #FECB88;
+    cursor: pointer; } }
+@media screen and (min-width: 800px) and (orientation: landscape) {
+  .nav-element {
+    display: inline-flex;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5em;
+    margin: 0 1.0rem; }
+
+  .nav-element:hover {
+    color: #FECB88;
+    cursor: pointer; }
+
+  a {
+    text-decoration: none;
+    color: #EEFEDC; }
+
+  a:hover {
+    text-decoration: none;
+    color: #FECB88; } }
+@media screen and (min-width: 800px) and (orientation: landscape) and (min-width: 1000px) and (orientation: landscape) {
+  .nav-element {
+    display: inline-flex;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5em;
+    margin: 0 2.0rem; } }
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  height: 15vh;
+  width: 100%;
+  padding: 2em;
+  background-color: #203145;
+  color: #EEFEDC;
+  letter-spacing: 1.5px;
+  text-align: center; }
+
+.shop-container {
+  height: auto;
+  width: inherit;
+  line-height: 30px;
+  font-size: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3em; }
+
+.card-container {
+  height: 350px;
+  width: 250px;
+  text-align: center;
+  border-radius: 2%;
+  background-color: #7E9EC4;
+  margin: 1em;
+  cursor: pointer; }
+
+.card-container:hover {
+  height: 352px;
+  width: 252px;
+  background-color: #507bae; }
+
+.text-container {
+  margin: 15px;
+  width: auto;
+  height: auto; }
+
+p {
+  font-size: 20px;
+  text-align: justify; }
+
+.card-pic {
+  margin-top: .5em;
+  height: 200px;
+  width: 200px; }
+
+h2 {
+  margin-top: 1.8em; }
+
+.home-container {
+  width: 100%;
+  height: 60em;
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  opacity: .4;
+  background-image: url("../../assets/korea.jpg"); }
+
+.story-container {
+  line-height: 30px;
+  font-size: 1.5em; }
+
+.story-text {
+  padding: 2em;
+  width: 50%;
+  float: right; }
+
+.story-pic {
+  display: block;
+  height: 100vh;
+  width: 50%;
+  float: left; }
+
+.contact-container {
+  line-height: 30px;
+  font-size: 1.5em;
+  font-size: 2em; }
+
+.contact-text {
+  padding: 2em;
+  width: auto;
+  float: left;
+  line-height: 2em; }
+
+.contact-text > p {
+  line-height: 1.8em; }
+
+.tag {
+  color: #D99F5B;
+  border-bottom: 3px solid #203145; }
+
+.contact-pic {
+  display: block;
+  height: 100vh;
+  width: 50%;
+  float: right; }
+
+.detailed-container {
+  text-align: center;
+  margin: 2em;
+  color: #203145; }
+
+.detailed-picture {
+  height: 25em;
+  width: 25em;
+  float: left;
+  margin-right: 1em; }
+
+.product-info {
+  letter-spacing: 3px;
+  line-height: 1.5em; }
+
+.product-info > h1 {
+  font-size: 3em; }
+
+.product-info > h3 {
+  font-size: 2em;
+  margin-bottom: 1em; }
+
+.product-desc {
+  margin: 2em 2em; }
+
+#add-btn {
+  background-color: #CFD2D7;
+  cursor: pointer;
+  border: 3px solid #203145;
+  border-radius: 5px;
+  font-family: "Oswald", sans-serif;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  padding: 15px;
+  font-size: 1.2em; }
+
+#add-btn:hover {
+  background-color: #203145;
+  color: #D99F5B;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in; }
+
+#add-btn:focus {
+  outline: 0; }
+
+#add-btn:active {
+  transform: translate(1.5px, 1.5px); }
+
+h1 {
+  font-size: 2em; }
+
+.cart-container {
+  text-align: center;
+  font-size: 2em;
+  line-height: 2em; }
+
+.cart-item-container {
+  width: 80%;
+  height: auto;
+  margin: 1em auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box; }
+
+.cart-item-container:nth-last-child(2) {
+  padding-bottom: 1em;
+  border-bottom: 5px solid #203145; }
+
+#cart-pic {
+  height: 150px;
+  width: 150px; }
+
+.cart-image-container {
+  height: 350px;
+  width: 250px;
+  text-align: center;
+  border-radius: 2%;
+  background-color: #D99F5B;
+  height: 200px;
+  width: 150px; }
+
+.cart-text-container {
+  text-align: right; }
+
+#total {
+  border-bottom: 5px solid #D99F5B;
+  padding: 5px;
+  text-align: left;
+  border-radius: 5px;
+  float: right;
+  margin-right: 4em;
+  margin-bottom: 2em; }
+
+.profile-container {
+  line-height: 30px;
+  font-size: 1.5em;
+  font-size: 2em; }
+
+h1 {
+  text-align: left;
+  margin-bottom: .8em; }
+
+.profile-text {
+  padding: 3em;
+  width: 50%;
+  float: left; }
+
+.update-btn {
+  background-color: #CFD2D7;
+  cursor: pointer;
+  border: 3px solid #203145;
+  border-radius: 5px;
+  font-family: "Oswald", sans-serif;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  padding: 10px;
+  font-size: 1em;
+  display: block;
+  margin: 0 auto; }
+
+.update-btn:hover {
+  background-color: #203145;
+  color: #D99F5B;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in; }
+
+.update-btn:focus {
+  outline: 0; }
+
+.update-btn:active {
+  transform: translate(1.5px, 1.5px); }
+
+input {
+  margin: 2em 0;
+  height: 10vh;
+  width: 35vw;
+  border-radius: 5px;
+  border: 2px solid #203145;
+  font-size: 1em;
+  color: #763F22; }
+
+input:focus {
+  outline: 0;
+  height: 11vh;
+  width: 36vw; }
+
+.profile-pic {
+  display: block;
+  height: 100vh;
+  width: 50%;
+  height: auto;
+  float: right; }
+
+.checkout-container {
+  float: right; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif, sans-serif; }
+
+/*# sourceMappingURL=index.css.map */

@@ -18,9 +18,10 @@ class Header extends Component {
               <li className = 'nav-element' id = 'login'><a href = {process.env.REACT_APP_LOGIN}>Login</a></li>}
               <Link to = '/profile'><li className ='nav-element'>Profile</li></Link>
               <Link to = '/cart'><li className = 'nav-element'>Cart</li></Link>
+              <img src = {require('../../assets/products/menu.png')} alt = 'mobile-menu' className = 'mobile-menu'/>               
               </ul>
-              
-              
+                         
+
               </header>);
     }
 }
