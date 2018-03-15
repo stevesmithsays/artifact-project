@@ -1,12 +1,11 @@
 h1 {
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 .cart-container {
     text-align: center;
-    font-size: 2em;
-    line-height: 2em;   
-       
+    font-size: 1.2em;
+    line-height: 2em;          
          
 }
 
@@ -28,8 +27,6 @@ h1 {
     border-bottom: 5px solid $main-color;
 }
 
-
-
 #cart-pic {
     height: 150px;
     width: 150px;
@@ -39,12 +36,9 @@ h1 {
      @include card-style;
     background-color: $secondary-dark; 
     height: 200px;
-    width: 150px;  
+    width: 150px; 
+    clear: both; 
    
-}
-
-.cart-text-container {
-    text-align: right;
 }
 
 #total {  
@@ -58,10 +52,9 @@ h1 {
     
 }
 
-
 .delete-item {
     @include btn-style;
-    padding: 2px;
+    padding: 3px;
     font-size: .5em;    
 
 }
@@ -78,3 +71,54 @@ h1 {
     transform: translate(1.5px, 1.5px);
 }
 
+
+/////////////////////////////////////////////////////////////////
+
+@media screen and (min-width: 465px) and (max-width: 1299px) and(orientation: landscape){
+    h1 {
+        font-size: 2em;
+    }
+    
+    .cart-container {
+    text-align: right;
+    font-size: 1.6em;
+             
+         
+}
+
+.cart-text-container{
+    text-align: right;
+}
+
+.delete-item {   
+    padding: 4px;
+}
+
+
+}
+
+
+@media screen and (min-width: 1300px) and (orientation: landscape){
+
+h1 {
+    font-size: 2em;
+}
+
+.cart-container {
+    text-align: center;
+    font-size: 2em;
+    line-height: 2em;          
+         
+}    
+
+
+.cart-text-container {
+    text-align: right;
+}
+
+.delete-item {   
+    padding: 5px;
+}
+
+
+}

@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$main-color".
-        on line 28 of src/styles/scss/Cart.scss
+        on line 27 of src/styles/scss/Cart.scss
 
-23: }
-24: 
-25: //applies the styles to the second last child in the container
-26: .cart-item-container:nth-last-child(2) {
-27:     padding-bottom: 1em;
-28:     border-bottom: 5px solid $main-color;
-29: }
-30: 
-31: 
-32: 
-33: #cart-pic {
+22: }
+23: 
+24: //applies the styles to the second last child in the container
+25: .cart-item-container:nth-last-child(2) {
+26:     padding-bottom: 1em;
+27:     border-bottom: 5px solid $main-color;
+28: }
+29: 
+30: #cart-pic {
+31:     height: 150px;
+32:     width: 150px;
 
 Backtrace:
-src/styles/scss/Cart.scss:28
+src/styles/scss/Cart.scss:27
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -73,4 +73,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$main-color\".\A         on line 28 of src/styles/scss/Cart.scss\A \A 23: }\A 24: \A 25: //applies the styles to the second last child in the container\A 26: .cart-item-container:nth-last-child(2) {\A 27:     padding-bottom: 1em;\A 28:     border-bottom: 5px solid $main-color;\A 29: }\A 30: \A 31: \A 32: \A 33: #cart-pic {"; }
+  content: "Error: Undefined variable: \"$main-color\".\A         on line 27 of src/styles/scss/Cart.scss\A \A 22: }\A 23: \A 24: //applies the styles to the second last child in the container\A 25: .cart-item-container:nth-last-child(2) {\A 26:     padding-bottom: 1em;\A 27:     border-bottom: 5px solid $main-color;\A 28: }\A 29: \A 30: #cart-pic {\A 31:     height: 150px;\A 32:     width: 150px;"; }

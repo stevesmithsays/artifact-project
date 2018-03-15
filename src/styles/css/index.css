@@ -392,11 +392,11 @@ h2 {
   transform: translate(1.5px, 1.5px); }
 
 h1 {
-  font-size: 2em; }
+  font-size: 1.8em; }
 
 .cart-container {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.2em;
   line-height: 2em; }
 
 .cart-item-container {
@@ -423,10 +423,8 @@ h1 {
   border-radius: 2%;
   background-color: #D99F5B;
   height: 200px;
-  width: 150px; }
-
-.cart-text-container {
-  text-align: right; }
+  width: 150px;
+  clear: both; }
 
 #total {
   border-bottom: 5px solid #D99F5B;
@@ -444,7 +442,7 @@ h1 {
   border-radius: 5px;
   font-family: "Oswald", sans-serif;
   transition: background-color 0.2s ease-out, color 0.2s ease-out;
-  padding: 2px;
+  padding: 3px;
   font-size: .5em; }
 
 .delete-item:hover {
@@ -458,6 +456,33 @@ h1 {
 .delete-item:active {
   transform: translate(1.5px, 1.5px); }
 
+@media screen and (min-width: 465px) and (max-width: 1299px) and (orientation: landscape) {
+  h1 {
+    font-size: 2em; }
+
+  .cart-container {
+    text-align: right;
+    font-size: 1.6em; }
+
+  .cart-text-container {
+    text-align: right; }
+
+  .delete-item {
+    padding: 4px; } }
+@media screen and (min-width: 1300px) and (orientation: landscape) {
+  h1 {
+    font-size: 2em; }
+
+  .cart-container {
+    text-align: center;
+    font-size: 2em;
+    line-height: 2em; }
+
+  .cart-text-container {
+    text-align: right; }
+
+  .delete-item {
+    padding: 5px; } }
 .profile-container {
   line-height: 30px;
   font-size: 1.5em;
@@ -515,7 +540,7 @@ input:focus {
   min-height: 100vh;
   width: 50%;
   display: block;
-  max-height: 40vh;
+  max-height: 30vh;
   width: 100vw; }
 
 .tag {
