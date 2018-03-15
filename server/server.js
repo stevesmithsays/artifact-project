@@ -8,6 +8,7 @@ const massive = require("massive");
 const Auth0Strategy = require("passport-auth0");
 const {STRIPE_SECRET_KEY, CONNECTION_STRING, SESSION_SECRET, DOMAIN, CLIENT_SECRET, CLIENT_ID} = process.env;
 
+
 //server side stripe being set up here
 const configureStripe = require('stripe');
 
@@ -17,14 +18,15 @@ const stripe = configureStripe(STRIPE_SECRET_KEY);
 let loggedInUser = [];
 let products = [];
 
-//path is part of node
-const path = require("path");
 
 //server port
 const port = 3002;
 
 //initialize express
 const app = express();
+
+//express static build
+app.use(express.static(`${__dirname}/../build`));
 
 //hooking up to the database
 massive(CONNECTION_STRING)
@@ -92,8 +94,8 @@ passport.deserializeUser((user, done) => done(null, user));
 app.get(
   "/auth",
   passport.authenticate("auth0", {
-    successRedirect: "http://localhost:3000/#/",
-    failureRedirect: "http://localhost:3000/auth",
+    successRedirect: "/#/",
+    failureRedirect: "/auth",
     failureFlash: true
   })
 );
@@ -102,7 +104,7 @@ app.get(
 app.get("/api/logout", (req, res, next) => {
   req.logout();
   req.session.destroy(() => {
-    res.redirect("http://localhost:3000/#/");
+    res.redirect("/#/");
   });
 });
 
@@ -209,6 +211,14 @@ app.post('/api/cart/checkout', (req, res) => {
         stripe.charges.create(req.body, postStripeCharge(res));
     });
 
+
+//path is part of node
+const path = require("path");
+
+//if a get request is made to the server, but it isn't to a valid endpoint, go to index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 //setting up the server to listen
 app.listen(port, () => {
