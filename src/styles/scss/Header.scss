@@ -44,12 +44,37 @@ a:hover {
     color: $action-text;
 }
 
-.mobile-menu {    
-    height: 3.5em;
-    width: 3.5em;
-    float: right;
-    margin-top: -1.5em;    
+.mobile-menu {  
+    float: right;   
+    cursor: pointer;
+    font-size: 1.5em;
 }
+
+.mobile-drop-down {
+    position: absolute;
+    width: 100%;
+    display: none;
+    background-color: $main-color;
+    color: $header-text;       
+    margin: 0 auto;
+    padding: .3em;    
+    border-radius: 5px;
+}
+
+.mobile-drop-down li {
+    margin: 2em;
+}
+
+.show-drop-down {
+    display: block;
+    margin: 0 auto;    
+}
+
+
+
+
+
+
 
 
 
@@ -79,6 +104,10 @@ a:hover {
 .nav-element:hover {
     color: $action-text;
     cursor: pointer;
+}
+
+.mobile-drop-down {
+    display: none;
 }
 
 }

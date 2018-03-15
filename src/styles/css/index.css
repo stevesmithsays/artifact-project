@@ -168,10 +168,26 @@ a:hover {
   color: #FECB88; }
 
 .mobile-menu {
-  height: 3.5em;
-  width: 3.5em;
   float: right;
-  margin-top: -1.5em; }
+  cursor: pointer;
+  font-size: 1.5em; }
+
+.mobile-drop-down {
+  position: absolute;
+  width: 100%;
+  display: none;
+  background-color: #203145;
+  color: #EEFEDC;
+  margin: 0 auto;
+  padding: .3em;
+  border-radius: 5px; }
+
+.mobile-drop-down li {
+  margin: 2em; }
+
+.show-drop-down {
+  display: block;
+  margin: 0 auto; }
 
 @media screen and (min-width: 600px) and (orientation: landscape) {
   .mobile-menu {
@@ -189,7 +205,10 @@ a:hover {
 
   .nav-element:hover {
     color: #FECB88;
-    cursor: pointer; } }
+    cursor: pointer; }
+
+  .mobile-drop-down {
+    display: none; } }
 @media screen and (min-width: 800px) and (orientation: landscape) {
   .nav-element {
     display: inline-flex;
@@ -228,7 +247,6 @@ a:hover {
 .shop-container {
   height: auto;
   width: inherit;
-  line-height: 30px;
   font-size: 1.5em;
   display: flex;
   flex-wrap: wrap;
@@ -264,8 +282,9 @@ p {
   height: 200px;
   width: 200px; }
 
-h2 {
-  margin-top: 1.8em; }
+.item-name {
+  font-size: .7em;
+  line-height: 10px; }
 
 .home-container {
   width: 100%;
@@ -273,9 +292,20 @@ h2 {
   background-size: cover;
   overflow: hidden;
   background-repeat: no-repeat;
-  opacity: .4;
-  background-image: url("../../assets/korea.jpg"); }
+  background-image: url("../../assets/korea.jpg");
+  margin: 0 auto; }
 
+.text-container {
+  font-style: "Vollkorn", serif;
+  font-size: 2em; }
+
+.text-container > h1, h2 {
+  text-align: center;
+  color: #203145; }
+
+@media screen and (min-width: 320px) and (max-width: 570px) and (orientation: vertical) {
+  .subheader {
+    display: none; } }
 .story-container {
   line-height: 30px;
   font-size: 1.5em; }
@@ -300,6 +330,10 @@ h2 {
     min-height: 100vh;
     width: 50%;
     float: left; } }
+@media screen and (min-width: 1500px) and (orientation: landscape) {
+  .story-text > p {
+    font-size: 1.2em;
+    line-height: 1.2em; } }
 .contact-container {
   line-height: 30px;
   font-size: 1.5em;
@@ -351,17 +385,17 @@ h2 {
   color: #203145; }
 
 .detailed-picture {
-  height: 25em;
-  width: 25em;
-  float: left;
-  margin-right: 1em; }
+  height: 15em;
+  width: 15em;
+  margin-bottom: 1em; }
 
 .product-info {
   letter-spacing: 3px;
   line-height: 1.5em; }
 
 .product-info > h1 {
-  font-size: 3em; }
+  font-size: 1.7em;
+  text-align: center; }
 
 .product-info > h3 {
   font-size: 2em;
@@ -391,6 +425,52 @@ h2 {
 #add-btn:active {
   transform: translate(1.5px, 1.5px); }
 
+@media screen and (min-width: 1300px) and (orientation: landscape) {
+  .detailed-container {
+    text-align: center;
+    margin: 2em;
+    color: #203145; }
+
+  .detailed-picture {
+    height: 25em;
+    width: 25em;
+    float: left;
+    margin-right: 1em; }
+
+  .product-info {
+    letter-spacing: 3px;
+    line-height: 1.5em; }
+
+  .product-info > h1 {
+    font-size: 3em; }
+
+  .product-info > h3 {
+    font-size: 2em;
+    margin-bottom: 1em; }
+
+  .product-desc {
+    margin: 2em 2em; }
+
+  #add-btn {
+    background-color: #CFD2D7;
+    cursor: pointer;
+    border: 3px solid #203145;
+    border-radius: 5px;
+    font-family: "Oswald", sans-serif;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
+    padding: 15px;
+    font-size: 1.2em; }
+
+  #add-btn:hover {
+    background-color: #203145;
+    color: #D99F5B;
+    transition: background-color 0.3s ease-in, color 0.3s ease-in; }
+
+  #add-btn:focus {
+    outline: 0; }
+
+  #add-btn:active {
+    transform: translate(1.5px, 1.5px); } }
 h1 {
   font-size: 1.8em; }
 

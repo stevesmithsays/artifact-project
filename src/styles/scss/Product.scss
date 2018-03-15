@@ -5,6 +5,64 @@
 }
 
 .detailed-picture {
+    height: 15em;
+    width: 15em;    
+    margin-bottom: 1em;
+   
+}
+
+.product-info {
+    letter-spacing: 3px;
+    line-height: 1.5em; 
+
+}
+
+.product-info > h1 {
+    font-size: 1.7em;
+    text-align: center;   
+}
+
+.product-info > h3 {
+    font-size: 2em;
+    margin-bottom: 1em;
+
+}
+
+.product-desc {
+    margin: 2em 2em;
+
+}
+
+#add-btn {
+  @include btn-style;
+  padding: 15px;
+  font-size: 1.2em;  
+
+}
+
+#add-btn:hover {
+   @include btn-hover;  
+   
+}
+
+#add-btn:focus {
+    outline: 0;    
+}
+
+#add-btn:active {    
+    transform: translate(1.5px, 1.5px);
+}
+
+//////////////////////////////////////////////////////////////////
+
+@media screen and (min-width: 1300px) and (orientation: landscape){
+.detailed-container {   
+    text-align: center;
+    margin: 2em;   
+    color: $main-color;
+}
+
+.detailed-picture {
     height: 25em;
     width: 25em;
     float: left;
@@ -53,6 +111,7 @@
 
 #add-btn:active {    
     transform: translate(1.5px, 1.5px);
+}
 }
 
 

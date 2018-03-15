@@ -4,9 +4,38 @@
     background-size: cover;
     overflow: hidden;
     background-repeat: no-repeat;
-    opacity: .4;   
+    // opacity: .9;   
     background-image: url('../../assets/korea.jpg'); 
+    margin: 0 auto;   
+       
+}
+
+.text-container {
+    font-style: $heading-font;   
+    font-size: 2em;   
    
 }
+
+.text-container > h1, h2 {    
+    text-align: center;   
+    color: $main-color;    
+
+}
+
+// h2 {
+//     color: $header-text;
+// }
+
+////////////////////////////////////////
+@media screen and (min-width: 320px) and (max-width: 570px) and (orientation: vertical){
+    .subheader {
+        display: none;
+    }
+
+
+}
+
+
+
 
 

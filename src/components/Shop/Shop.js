@@ -30,7 +30,7 @@ class Shop extends Component {
                   alt="product"
                   key={index}
                 />
-                <h2>{curr.name}</h2>
+                <span className = 'item-name'>{curr.name}</span>
               </div>
             </div>
           </Link>

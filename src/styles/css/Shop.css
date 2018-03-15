@@ -1,23 +1,23 @@
 /*
 Error: Undefined mixin 'card-style'.
-        on line 21 of src/styles/scss/Shop.scss, in `card-style'
-        from line 21 of src/styles/scss/Shop.scss
+        on line 20 of src/styles/scss/Shop.scss, in `card-style'
+        from line 20 of src/styles/scss/Shop.scss
 
-16:     padding: 3em;
-17:     
-18: }
-19: 
-20: .card-container {
-21:    @include card-style;
-22:    background-color: $card-background;
-23:    margin: 1em;    
-24:    cursor: pointer;  
-25:     
-26: } 
+15:     padding: 3em;
+16:     
+17: }
+18: 
+19: .card-container {
+20:    @include card-style;
+21:    background-color: $card-background;
+22:    margin: 1em;    
+23:    cursor: pointer;  
+24:     
+25: } 
 
 Backtrace:
-src/styles/scss/Shop.scss:21:in `card-style'
-src/styles/scss/Shop.scss:21
+src/styles/scss/Shop.scss:20:in `card-style'
+src/styles/scss/Shop.scss:20
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:98:in `block in with_mixin'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
@@ -73,4 +73,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'card-style'.\A         on line 21 of src/styles/scss/Shop.scss, in `card-style'\A         from line 21 of src/styles/scss/Shop.scss\A \A 16:     padding: 3em;\A 17:     \A 18: }\A 19: \A 20: .card-container {\A 21:    @include card-style;\A 22:    background-color: $card-background;\A 23:    margin: 1em;    \A 24:    cursor: pointer;  \A 25:     \A 26: } "; }
+  content: "Error: Undefined mixin 'card-style'.\A         on line 20 of src/styles/scss/Shop.scss, in `card-style'\A         from line 20 of src/styles/scss/Shop.scss\A \A 15:     padding: 3em;\A 16:     \A 17: }\A 18: \A 19: .card-container {\A 20:    @include card-style;\A 21:    background-color: $card-background;\A 22:    margin: 1em;    \A 23:    cursor: pointer;  \A 24:     \A 25: } "; }
