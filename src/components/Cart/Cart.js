@@ -16,8 +16,7 @@ class Cart extends Component {
         this.handleDelete = this.handleDelete.bind(this);
     }
 
-componentDidMount(){  
-    console.log('componentdidmount'); 
+componentDidMount(){      
     this.props.getCart();    
 }
 

@@ -18,7 +18,7 @@ class Shop extends Component {
     //displays and renders product cards if there are product cards to render
     let cardDisplay;
 
-    if (this.props.products.length !== 0) {
+    if (this.props.products.length !== 0 ) {
       cardDisplay = this.props.products.map((curr, index) => {
         return (
           <Link to={`/product/${index}`} key={index}>

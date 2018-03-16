@@ -138,7 +138,7 @@ app.post("/api/addtocart", (req, res, next) => {
   const userId = loggedInUser[0].id;
   const productId = req.body.product_id;
   const price = req.body.unit_price;
-  // console.log('SERVER ENDPOINT - productId: ' + typeof productId, 'price: ' + typeof price);
+  
   req.app
     .get("db")
     .addItemToCart(userId, productId, price)
@@ -152,7 +152,7 @@ app.post("/api/addtocart", (req, res, next) => {
 
 //cart endpoint for getting the current user's cart
 app.get("/api/getcart", (req, res, next) => {
-  const userId = loggedInUser[0].id;
+  const userId = req.user.id;
   req.app
     .get("db")
     .getCart(userId)
@@ -167,9 +167,7 @@ app.get("/api/getcart", (req, res, next) => {
 //cart endpoint for deleting an item from user's cart
 app.delete(`/api/cart/:productId`, (req, res, next) => { 
   const userId = req.user.id;
-  const productId = req.body.product;
-  console.log("req body: ", req.body);
-  console.log(userId, productId);
+  const productId = req.body.product;  
   req.app
     .get("db")
     .deleteItemFromCart(userId, productId)
