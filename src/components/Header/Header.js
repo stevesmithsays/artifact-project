@@ -60,12 +60,12 @@ class Header extends Component {
                 this.dropDn = dropDn;
               }}>
               <ul>
-                <li>Shop</li>
-                <li>Story</li>
-                <li>Contact</li>
-                <li>Login</li>
-                <li>Profile</li>
-                <li>Cart</li>
+                <Link to = '/shop'><li>Shop</li></Link>
+                <Link to = '/story'><li>Story</li></Link>
+                <Link to = '/contact'><li>Contact</li></Link>               
+                {this.props.user.id ? <li><a href = {process.env.REACT_APP_LOGOUT}>Logout</a></li> : <li><a href ={process.env.REACT_APP_LOGIN}>Login</a></li>}
+                <Link to = '/profile'><li>Profile</li></Link>
+                <Link to = '/cart'><li>Cart</li></Link>
               </ul>
             </div>
           </header>;
