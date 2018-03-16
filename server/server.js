@@ -20,7 +20,7 @@ let products = [];
 
 
 //server port
-const port = 3002;
+const port = process.env.PORT || 3002;
 
 //initialize express
 const app = express();
