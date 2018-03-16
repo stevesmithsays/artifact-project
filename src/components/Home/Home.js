@@ -17,8 +17,8 @@ class Home extends Component {
                
         return <div className="home-container">
             <div className="text-container">
-              <h1>Welcome to Artifact Fine Goods</h1>
-              <h2 className = 'subheader'>Gifts from Around the World</h2>
+              <h1 id ='welcome'>Welcome to Artifact Fine Goods</h1>
+              <h2 id = 'tagline'>Gifts from Around the World</h2>
             </div>
           </div>;
     }

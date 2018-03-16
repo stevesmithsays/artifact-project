@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$heading-font".
-        on line 14 of src/styles/scss/Home.scss
+        on line 13 of src/styles/scss/Home.scss
 
-9:     margin: 0 auto;   
-10:        
-11: }
-12: 
-13: .text-container {
-14:     font-style: $heading-font;   
-15:     font-size: 2em;   
-16:    
-17: }
-18: 
-19: .text-container > h1, h2 {    
+8:     margin: 0 auto;   
+9:        
+10: }
+11: 
+12: .text-container {
+13:     font-style: $heading-font;   
+14:     font-size: 2em;   
+15:    
+16: }
+17: 
+18: .text-container, h1, h2 {    
 
 Backtrace:
-src/styles/scss/Home.scss:14
+src/styles/scss/Home.scss:13
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -69,4 +69,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$heading-font\".\A         on line 14 of src/styles/scss/Home.scss\A \A 9:     margin: 0 auto;   \A 10:        \A 11: }\A 12: \A 13: .text-container {\A 14:     font-style: $heading-font;   \A 15:     font-size: 2em;   \A 16:    \A 17: }\A 18: \A 19: .text-container > h1, h2 {    "; }
+  content: "Error: Undefined variable: \"$heading-font\".\A         on line 13 of src/styles/scss/Home.scss\A \A 8:     margin: 0 auto;   \A 9:        \A 10: }\A 11: \A 12: .text-container {\A 13:     font-style: $heading-font;   \A 14:     font-size: 2em;   \A 15:    \A 16: }\A 17: \A 18: .text-container, h1, h2 {    "; }

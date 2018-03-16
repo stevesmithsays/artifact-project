@@ -3,8 +3,7 @@
     height: 60em;           
     background-size: cover;
     overflow: hidden;
-    background-repeat: no-repeat;
-    // opacity: .9;   
+    background-repeat: no-repeat;    
     background-image: url('../../assets/korea.jpg'); 
     margin: 0 auto;   
        
@@ -16,24 +15,19 @@
    
 }
 
-.text-container > h1, h2 {    
-    text-align: center;   
-    color: $main-color;    
+.text-container, h1, h2 {    
+    text-align: center;        
 
 }
 
-// h2 {
-//     color: $header-text;
-// }
-
-////////////////////////////////////////
-@media screen and (min-width: 320px) and (max-width: 570px) and (orientation: vertical){
-    .subheader {
-        display: none;
-    }
-
-
+#welcome {    
+    color: $main-color;  
 }
+
+#tagline {
+    color: $action-text; 
+}
+
 
 
 
