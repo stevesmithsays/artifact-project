@@ -296,17 +296,15 @@ p {
   margin: 0 auto; }
 
 .text-container {
-  font-style: "Vollkorn", serif;
   font-size: 2em; }
 
-.text-container, h1, h2 {
+#welcome {
+  color: #203145;
   text-align: center; }
 
-#welcome {
-  color: #203145; }
-
 #tagline {
-  color: #FECB88; }
+  color: #EEFEDC;
+  text-align: center; }
 
 .story-container {
   line-height: 30px;

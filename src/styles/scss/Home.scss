@@ -9,23 +9,20 @@
        
 }
 
-.text-container {
-    font-style: $heading-font;   
+.text-container {       
     font-size: 2em;   
    
 }
 
-.text-container, h1, h2 {    
-    text-align: center;        
-
-}
 
 #welcome {    
     color: $main-color;  
+    text-align: center;
 }
 
 #tagline {
-    color: $action-text; 
+    color: $header-text; 
+    text-align: center;
 }
 
 
