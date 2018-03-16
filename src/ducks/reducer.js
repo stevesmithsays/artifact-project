@@ -42,7 +42,7 @@ export function addToCart(userId, productId, price){
     }
 }
 
-export function getCart(){
+export function getCart(){   
     return {
         type: GET_CART,
         payload: axios.get('/api/getcart').then( (res) => {

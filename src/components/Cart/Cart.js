@@ -16,7 +16,8 @@ class Cart extends Component {
         this.handleDelete = this.handleDelete.bind(this);
     }
 
-componentDidMount(){   
+componentDidMount(){  
+    console.log('componentdidmount'); 
     this.props.getCart();    
 }
 
@@ -43,17 +44,14 @@ handleDelete = (productId) => {
 
 
     render(){      
-            
+          
         let cartDisplay; 
-        if(this.props.cart !== undefined && this.props.cart.length !== 0){ 
-             cartDisplay = this.props.cart.map( (curr, index) => {
-                // let userId = this.props.user.id;
-                // // let productId = this.props.match.params.id;
-                // console.log(productId);
+        if(this.props.cart !== undefined && this.props.cart.length > 0){ 
+             cartDisplay = this.props.cart.map( (curr, index) => {           
 
                 return(<div key = {index} className = 'cart-item-container'>
                 <div className = 'cart-image-container'>
-                <img src={require(`../../assets/products/${curr.image}`)} className = 'card-pic' id = 'cart-pic' alt = 'cart-item'/>
+                <img src={curr.image ? require(`../../assets/products/${curr.image}`) : null} className = 'card-pic' id = 'cart-pic' alt = 'cart-item'/>
                 </div>
                 <div className = 'cart-text-container'>           
                 <h4>{curr.name}</h4>             
@@ -62,8 +60,8 @@ handleDelete = (productId) => {
                 </div>                         
                 </div>);
              })                             
-        }
-
+        } 
+      
         return <div className="cart-container">
             <h1>Shopping Cart</h1>
             {cartDisplay}

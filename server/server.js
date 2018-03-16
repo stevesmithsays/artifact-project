@@ -26,7 +26,7 @@ const port = 3002;
 const app = express();
 
 //express static build
-app.use(express.static(`${__dirname}/../build`));
+//app.use(express.static(`${__dirname}/../build`));
 
 //hooking up to the database
 massive(CONNECTION_STRING)
@@ -94,7 +94,7 @@ passport.deserializeUser((user, done) => done(null, user));
 app.get(
   "/auth",
   passport.authenticate("auth0", {
-    successRedirect: "/#/",
+    successRedirect: "http://localhost:3000/#/",
     failureRedirect: "/auth",
     failureFlash: true
   })
