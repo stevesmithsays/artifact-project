@@ -26,7 +26,7 @@ const port = 3002;
 const app = express();
 
 //express static build
-//app.use(express.static(`${__dirname}/../build`));
+app.use(express.static(`${__dirname}/../build`));
 
 //hooking up to the database
 massive(CONNECTION_STRING)
