@@ -24,8 +24,9 @@ render(){
         let price = this.props.products[`${productIndex}`].price;
         let name = currProduct.name;
         let image = currProduct.image;
+        let desc = currProduct.productinfo;
         let userId = this.props.user.id;     
-         
+         console.log(currProduct);
           return (
             <div className="detailed-container">
               <img
@@ -35,14 +36,8 @@ render(){
 
               <div className="product-info">
                 <h1>{`${name}`}</h1>
-                <p className="product-desc">
-                  Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora
-                  quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead
-                  dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus
-                  vultus comedat cerebella viventium. Qui offenderit rapto, terribilem
-                  incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search
-                  for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut
-                  malus movie horror.
+                <p className="product-desc">                  
+                  {`${desc}`}                 
                 </p>
                 <h3>{`Price: $${price}`}</h3>
                 <button id="add-btn" onClick= {() => this.props.addToCart(userId, productId, price)}>
