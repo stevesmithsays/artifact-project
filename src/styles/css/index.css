@@ -136,6 +136,11 @@ table {
   background-color: #CFD2D7;
   color: #203145; }
 
+.wrong-address-pg {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2em; }
+
 .header-container {
   height: 15vh;
   width: 100%;

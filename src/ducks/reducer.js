@@ -7,14 +7,13 @@ const ADD_TO_CART = "ADD_TO_CART";
 const GET_CART = "GET_CART";
 const DELETE_FROM_CART = 'DELETE_FROM_CART';
 const UPDATE_PROFILE = 'UPDATE_PROFILE';
+const GET_PROFILE = 'GET_PROFILE';
 
 
 
 
 //ACTION CREATORS
-//becomes the action.payload in the reducer
 export function saveUser(){
-    //whatever is posted can be accessed on the backend through req.body via body parser
     return {
         type: SAVE_USER,
         payload: axios.get('/api/currentuser').then( (res) =>{                       
@@ -52,7 +51,6 @@ export function getCart(){
 }
 
 export function deleteFromCart(productId){
-    console.log(productId);
     return {
         type: DELETE_FROM_CART,
         payload: axios.delete(`api/cart/${productId}`, {data: {"product": productId}}).then( (res) => {
@@ -63,14 +61,19 @@ export function deleteFromCart(productId){
 
 //updates the current user's profile in the database
 export function updateProfile(style, origin, id){
-    
-   
     return {
         type: UPDATE_PROFILE,
         payload: axios.put(`/api/profile/${id}`, {favorite_style: style, favorite_origin: origin}).then( (res) =>{
             return res.data;
 
         }).catch((err) => {console.log(err)})
+    }
+}
+
+export function getProfile(id){
+    return {
+        type: GET_PROFILE,
+        payload: axios.get('/api/profile/${id}')
     }
 }
 
@@ -87,66 +90,151 @@ const initialState = {
 
 //REDUCER
 export default function reducer(state = initialState, action) {
-    console.log(action.type);
+    console.log(action.payload);
     switch(action.type) {      
-       
 //SAVE_USER 
         case `${SAVE_USER}_PENDING`:       
-        return Object.assign({}, state, {isLoading: true});
+        return {
+            ...state,
+            isLoading: true
+        }
 
         case `${SAVE_USER}_FULFILLED`:        
-        return Object.assign({}, state, {isLoading: false, user: action.payload});
+        return {
+            ...state,
+            isLoading: false,
+            user: action.payload,
+            profile: action.payload
+        }
 
         case `${SAVE_USER}_REJECTED`:        
-        return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+        return {
+            ...state,
+            isLoading: false,
+            didErr: true,
+            errMessage: action.payload
+        }
 //SAVE_PRODUCTS 
         case `${SAVE_PRODUCTS}_PENDING`:
-        return Object.assign({}, state, {isLoading: true});
+        return {
+            ...state,
+            isLoading: true
+        }
 
         case `${SAVE_PRODUCTS}_FULFILLED`:
-        return Object.assign({}, state, {isLoading: false, products: action.payload});
+        
+        return {
+            ...state,
+            isLoading: false,
+            products: action.payload
+        }
 
         case `${SAVE_PRODUCTS}_REJECTED`:
-        return Object.assign( {}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+        return {
+            ...state,
+            isLoading: false,
+            didErr: true,
+            errMessage: action.payload
+        }
+
 //ADD_TO_CART
         case `${ADD_TO_CART}_PENDING`:        
-        return Object.assign({}, state, {isLoading: true});
+      
+        return {
+            ...state,
+            isLoading: true
+        }
 
         case `${ADD_TO_CART}_FULFILLED`:        
-        return Object.assign({}, state, {isLoading: false, cart: action.payload});
+      
+        return {
+            ...state,
+            isLoading: false,
+            cart: action.payload
+        }
 
         case `${ADD_TO_CART}_REJECTED`:        
-        return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+        
+        return {
+            ...state,
+            isLoading: false,
+            didErr: true,
+            errMessage: action.payload
+        }
 //GET_CART
         case `${GET_CART}_PENDING`:
-        return Object.assign({}, state, {isLoading: true});
+        return {
+            ...state,
+            isLoading: true
+        }
 
         case `${GET_CART}_FULFILLED`:
-        return Object.assign({}, state, {isLoading: false, cart: action.payload});
+        return {
+            ...state,
+            isLoading: false,
+            cart: action.payload
+        }
 
         case `${GET_CART}_REJECTED`:
-        return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+        return {
+            ...state,
+            isLoading: false,
+            didErr: true,
+            errMessage: action.payload
+        }
 //DELETE_FROM_CART
         case `${DELETE_FROM_CART}_PENDING`:
-        return Object.assign({}, state, {isLoading: true});
+
+        return {
+            ...state,
+            isLoading: true
+        }
 
         case `${DELETE_FROM_CART}_FULFILLED`:
-        return Object.assign({}, state, {isLoading: false, cart: action.payload});
+        return {
+            ...state,
+            isLoading: false,
+            cart: action.payload
+        }
 
         case `${DELETE_FROM_CART}_REJECTED`:
-        return Object.assign({}, state, {isLoading: false, errMessage: action.payload});
+        return {
+            ...state,
+            isLoading: false,
+            errMessage: action.payload
+        }
 //UPDATE_PROFILE
         case `${UPDATE_PROFILE}_PENDING`:
-        return Object.assign({}, state, {isLoading: true});
+        return {
+            ...state,
+            isLoading: true
+        }
 
         case `${UPDATE_PROFILE}_FULFILLED`:
-        return Object.assign({}, state, {isLoading: false, profile: action.payload});
+        
+        return {
+            ...state,
+            isLoading: false,
+            profile: action.payload
+        }
 
         case `${UPDATE_PROFILE}_REJECTED`:
-        return Object.assign({}, state, {isLoading: false, didErr: true, errMessage: action.payload});
+       
+        return {
+            ...state,
+            isLoading: false,
+            didErr: true,
+            errMessage: action.payload
+        }
+
+        //GET_PROFILE
+            case `${GET_PROFILE}_FULFILLED`:
+            return {
+                ...state,
+                profile: action.payload
+            }
         
         default: 
-        
         return state;
 
     }
