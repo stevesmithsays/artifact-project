@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import swal from 'sweetalert2';
 
 //Local Imports
-import { updateProfile, getProfile, saveUser } from '../../ducks/reducer';
+import { updateProfile, getProfile } from '../../ducks/reducer';
 
 class Profile extends Component {
   constructor() {
@@ -100,5 +100,5 @@ const mapStateToProps = state => state;
 
 export default connect(
   mapStateToProps,
-  { updateProfile, getProfile, saveUser }
+  { updateProfile, getProfile }
 )(Profile);

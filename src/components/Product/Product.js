@@ -38,7 +38,6 @@ class Product extends Component {
               className="detailed-picture"
               alt="detailed view"
             />
-
             <div className="product-info">
               <h1>{`${name}`}</h1>
               <p className="product-desc">{`${desc}`}</p>
