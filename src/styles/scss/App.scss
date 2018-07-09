@@ -24,11 +24,6 @@ $heading-font: 'Vollkorn', serif;
 $body-font: 'Oswald', sans-serif;
 
 
-
-//FONTS
-//OSWALD, SANS-SERIF
-//VOLLKORN, SERIF
-
 //MIXINS
 //parent containers in story, contact
 @mixin parent-container-style {
@@ -80,6 +75,11 @@ $body-font: 'Oswald', sans-serif;
 
 }
 
+.wrong-address-pg {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2em;
+}
 
 
 

@@ -20,7 +20,7 @@ export default (
         <Route path = '/cart' component = {Cart} />     
         <Route path = "*" render={() => {
            return <div>
-                <p>404: NOT FOUND</p>
+                <p className = 'wrong-address-pg'>404: NOT FOUND. Please try a different link.</p>
             </div>
         }} />
     </Switch>

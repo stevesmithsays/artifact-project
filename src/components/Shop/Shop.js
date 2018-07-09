@@ -1,14 +1,9 @@
-//Foreign Imports
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-
-//Local Imports
-import { saveProducts } from "../../ducks/reducer";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { saveProducts } from '../../ducks/reducer';
 
 class Shop extends Component {
- 
-
   //on page load, pull all of the available products from the database
   componentDidMount() {
     this.props.saveProducts();
@@ -16,9 +11,10 @@ class Shop extends Component {
 
   render() {
     //displays and renders product cards if there are product cards to render
+    let { products } = this.props;
     let cardDisplay;
 
-    if (this.props.products.length !== 0 ) {
+    if (products.length !== 0 && products !== undefined) {
       cardDisplay = this.props.products.map((curr, index) => {
         return (
           <Link to={`/product/${index}`} key={index}>
@@ -30,7 +26,7 @@ class Shop extends Component {
                   alt="product"
                   key={index}
                 />
-                <span className = 'item-name'>{curr.name}</span>
+                <span className="item-name">{curr.name}</span>
               </div>
             </div>
           </Link>
@@ -38,10 +34,17 @@ class Shop extends Component {
       });
     }
 
-    return <div className="shop-container">{cardDisplay}</div>;
+    return (
+      <div className="shop-container">
+        {this.props.isLoading ? <div>...One Moment Please</div> : cardDisplay}
+      </div>
+    );
   }
 }
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps, { saveProducts })(Shop);
+export default connect(
+  mapStateToProps,
+  { saveProducts }
+)(Shop);
